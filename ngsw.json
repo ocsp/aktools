@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1560415531982,
+  "timestamp": 1560426117768,
   "index": "https://aktools.graueneko.xyz/index.html",
   "assetGroups": [
     {
@@ -10,13 +10,13 @@
       "urls": [
         "https://aktools.graueneko.xyz/favicon.ico",
         "https://aktools.graueneko.xyz/index.html",
-        "https://aktools.graueneko.xyz/main-es2015.dee2e8e6fbaf00a9dd12.js",
-        "https://aktools.graueneko.xyz/main-es5.c88984b1762543fc12dd.js",
+        "https://aktools.graueneko.xyz/main-es2015.fda465598f719d85977f.js",
+        "https://aktools.graueneko.xyz/main-es5.601797ecf273dcb29926.js",
         "https://aktools.graueneko.xyz/polyfills-es2015.e954256595c973372414.js",
         "https://aktools.graueneko.xyz/polyfills-es5.943113ac054b16d954ae.js",
         "https://aktools.graueneko.xyz/runtime-es2015.858f8dd898b75fe86926.js",
         "https://aktools.graueneko.xyz/runtime-es5.741402d1d47331ce975c.js",
-        "https://aktools.graueneko.xyz/styles.5180aa0c3a7c1d15b902.css"
+        "https://aktools.graueneko.xyz/styles.4f1a17cbbdc3386f6987.css"
       ],
       "patterns": []
     },
@@ -117,12 +117,16 @@
         "https://aktools.graueneko.xyz/assets/img/chara/ГУМ.png",
         "https://aktools.graueneko.xyz/assets/img/chara/Истина.png",
         "https://aktools.graueneko.xyz/assets/img/chara/зима.png",
-        "https://aktools.graueneko.xyz/assets/img/contributor/crystal.jpg",
-        "https://aktools.graueneko.xyz/assets/img/contributor/graueneko.png",
         "https://aktools.graueneko.xyz/assets/img/help/add-to-homescreen-01.jpg",
         "https://aktools.graueneko.xyz/assets/img/help/add-to-homescreen-02.jpg",
         "https://aktools.graueneko.xyz/assets/img/help/add-to-homescreen-03.jpg",
         "https://aktools.graueneko.xyz/assets/img/help/add-to-homescreen-04.jpg",
+        "https://aktools.graueneko.xyz/assets/img/help/iconstr1.jpg",
+        "https://aktools.graueneko.xyz/assets/img/help/iconstr2.jpg",
+        "https://aktools.graueneko.xyz/assets/img/main/crystal.jpg",
+        "https://aktools.graueneko.xyz/assets/img/main/github.png",
+        "https://aktools.graueneko.xyz/assets/img/main/graueneko.png",
+        "https://aktools.graueneko.xyz/assets/img/main/telegram.png",
         "https://aktools.graueneko.xyz/assets/img/material/DIAMOND.png",
         "https://aktools.graueneko.xyz/assets/img/material/DIAMOND_SHD.png",
         "https://aktools.graueneko.xyz/assets/img/material/EXGG_SHD.png",
@@ -307,12 +311,16 @@
     "https://aktools.graueneko.xyz/assets/img/chara/ГУМ.png": "14bcc91a5091d356c029e993c705c2dcbf957c93",
     "https://aktools.graueneko.xyz/assets/img/chara/Истина.png": "8f921bf5791a0b68224eca5ece401ae5631128f8",
     "https://aktools.graueneko.xyz/assets/img/chara/зима.png": "3cd3272b56b0bd095ec707908bdcf5092bb0edf0",
-    "https://aktools.graueneko.xyz/assets/img/contributor/crystal.jpg": "4a442d1e7886924e09d9555e3a5d8528e8af0467",
-    "https://aktools.graueneko.xyz/assets/img/contributor/graueneko.png": "3d7193f75183f419dfa681444bc29687c746b3f4",
     "https://aktools.graueneko.xyz/assets/img/help/add-to-homescreen-01.jpg": "9b820640a3ebbbd88856f28a8cb03f91185eb988",
     "https://aktools.graueneko.xyz/assets/img/help/add-to-homescreen-02.jpg": "9bf110644d765807193302931f851062fda7a88d",
     "https://aktools.graueneko.xyz/assets/img/help/add-to-homescreen-03.jpg": "ddb831feeeafeaf6b4fdc912a115bcbca4b5ae64",
     "https://aktools.graueneko.xyz/assets/img/help/add-to-homescreen-04.jpg": "e82793be3b7b65fa9bf541e5ebf1d15b9c5ce03c",
+    "https://aktools.graueneko.xyz/assets/img/help/iconstr1.jpg": "5b15a59a790630a146de4b62b6be9e3a6d524c5d",
+    "https://aktools.graueneko.xyz/assets/img/help/iconstr2.jpg": "d13e6bf18ae4f8bc531a454d7ce2a2b47c567bfb",
+    "https://aktools.graueneko.xyz/assets/img/main/crystal.jpg": "4a442d1e7886924e09d9555e3a5d8528e8af0467",
+    "https://aktools.graueneko.xyz/assets/img/main/github.png": "789a6a99e01684230fdcdb9b1d7bf79ee1c39262",
+    "https://aktools.graueneko.xyz/assets/img/main/graueneko.png": "3d7193f75183f419dfa681444bc29687c746b3f4",
+    "https://aktools.graueneko.xyz/assets/img/main/telegram.png": "ea18a5a11b100ee36c95821a014a0729cb890292",
     "https://aktools.graueneko.xyz/assets/img/material/DIAMOND.png": "e3e9cd153ab4c0b993ac72d437567fcda3a8a57c",
     "https://aktools.graueneko.xyz/assets/img/material/DIAMOND_SHD.png": "c1583067f772e19424eb4a68dd4558aee8642835",
     "https://aktools.graueneko.xyz/assets/img/material/EXGG_SHD.png": "57a28958595f81f39c45c77d0376acc39dc7ca04",
@@ -400,14 +408,14 @@
     "https://aktools.graueneko.xyz/assets/img/material/sprite_exp_card_t3.png": "4c1b0bf8807a8b8a84daac39a140e1b3d7427298",
     "https://aktools.graueneko.xyz/assets/img/material/sprite_exp_card_t4.png": "ed1d449612b0cea27a5f479f31fe3cc85e837c98",
     "https://aktools.graueneko.xyz/favicon.ico": "7ec4b922393b7e42f34ea41343cbb4c4b6ff87db",
-    "https://aktools.graueneko.xyz/index.html": "a7c5afcb32e26cafbd212aa0c332f3b5167964de",
-    "https://aktools.graueneko.xyz/main-es2015.dee2e8e6fbaf00a9dd12.js": "68e0080437014c53a743ff7f277a5c595401ee20",
-    "https://aktools.graueneko.xyz/main-es5.c88984b1762543fc12dd.js": "913623ad1b00345e4f983d0b75139ff5f368c180",
+    "https://aktools.graueneko.xyz/index.html": "c3462b4a1858da59202d46b586785fcdc6220679",
+    "https://aktools.graueneko.xyz/main-es2015.fda465598f719d85977f.js": "8b0486adba93be76659a1ac0a21b32f35757bf9c",
+    "https://aktools.graueneko.xyz/main-es5.601797ecf273dcb29926.js": "899b77c25591008671b6aec7d22c071c4f3fa935",
     "https://aktools.graueneko.xyz/polyfills-es2015.e954256595c973372414.js": "ae2d1da695b0816436f21ff43f857a42b11a4e17",
     "https://aktools.graueneko.xyz/polyfills-es5.943113ac054b16d954ae.js": "042d7744ef82a64c73310f1db253736731a03950",
     "https://aktools.graueneko.xyz/runtime-es2015.858f8dd898b75fe86926.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
     "https://aktools.graueneko.xyz/runtime-es5.741402d1d47331ce975c.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
-    "https://aktools.graueneko.xyz/styles.5180aa0c3a7c1d15b902.css": "734243112bcb05813a5ffb1be1ba7f02f753b848"
+    "https://aktools.graueneko.xyz/styles.4f1a17cbbdc3386f6987.css": "2cbd7e53f3bf73fb56bc029c8050de97a95c3c95"
   },
   "navigationUrls": [
     {
