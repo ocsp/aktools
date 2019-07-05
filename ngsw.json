@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1562315875443,
+  "timestamp": 1562321870254,
   "index": "https://aktools.graueneko.xyz/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "https://aktools.graueneko.xyz/favicon.ico",
         "https://aktools.graueneko.xyz/index.html",
-        "https://aktools.graueneko.xyz/main-es2015.fdf94830a29f6266b389.js",
-        "https://aktools.graueneko.xyz/main-es5.5f7b10bf933f3cd28577.js",
+        "https://aktools.graueneko.xyz/main-es2015.315d35684c184340bc7c.js",
+        "https://aktools.graueneko.xyz/main-es5.7958d2919978f9541627.js",
         "https://aktools.graueneko.xyz/polyfills-es2015.a8a427870d413bfcb9c7.js",
         "https://aktools.graueneko.xyz/polyfills-es5.ba0dfe4e8ca6e5fd2eca.js",
         "https://aktools.graueneko.xyz/runtime-es2015.858f8dd898b75fe86926.js",
@@ -234,7 +234,7 @@
     "https://aktools.graueneko.xyz/assets/data/aklevel.json": "1a2277806ee936551b7609386e69e48ffcf49c86",
     "https://aktools.graueneko.xyz/assets/data/akmaterial.json": "92919bcbe1206fbb9ad8e88bce5e99389bd6731e",
     "https://aktools.graueneko.xyz/assets/data/charMaterials.json": "9a3a4117232df2b4ecbade5e04bf5483cebaa95d",
-    "https://aktools.graueneko.xyz/assets/data/material.json": "dc61478d778d94e08bb7c5a2520550cb44b2110f",
+    "https://aktools.graueneko.xyz/assets/data/material.json": "ae73c90474991fb013b6245adc72e7608143fc30",
     "https://aktools.graueneko.xyz/assets/icons/android-chrome-192x192.png": "ed20f845dd9c723a93d35cefc8aa79a398770ad9",
     "https://aktools.graueneko.xyz/assets/icons/android-chrome-384x384.png": "599b601fedac9714dc53e51d945a1055bf664f3a",
     "https://aktools.graueneko.xyz/assets/icons/apple-touch-icon-precomposed.png": "aeb813e646f327723233e8c6fe0224005f1b1e9a",
@@ -430,9 +430,9 @@
     "https://aktools.graueneko.xyz/assets/models/Yolo-identify/group1-shard9of9.bin": "bc13d75eaa1f8a95ac6fcfd4bf35dd3d816216cc",
     "https://aktools.graueneko.xyz/assets/models/Yolo-identify/model.json": "ed6649354c28f6b42abfd72c7be9762981a55e74",
     "https://aktools.graueneko.xyz/favicon.ico": "7ec4b922393b7e42f34ea41343cbb4c4b6ff87db",
-    "https://aktools.graueneko.xyz/index.html": "0fe5c6abc1cfa0df6f7ba2715e9ee802c4f154c1",
-    "https://aktools.graueneko.xyz/main-es2015.fdf94830a29f6266b389.js": "35c282e98ded5665f6783ce4a06f907e3ac2cf2b",
-    "https://aktools.graueneko.xyz/main-es5.5f7b10bf933f3cd28577.js": "88254bf1d165c72f99b8c8ce29a9c91ac930d1ca",
+    "https://aktools.graueneko.xyz/index.html": "03ef380e736e986b72f3c200fa07d978e01fbd88",
+    "https://aktools.graueneko.xyz/main-es2015.315d35684c184340bc7c.js": "1fb109c84084325c23bbda67949c982ef8f8762c",
+    "https://aktools.graueneko.xyz/main-es5.7958d2919978f9541627.js": "4207e0fd057bfd4e1bf8f24ed4fa0df514b00129",
     "https://aktools.graueneko.xyz/polyfills-es2015.a8a427870d413bfcb9c7.js": "796e365fadcb7d319d11237d4aa9cd3d65e5d71a",
     "https://aktools.graueneko.xyz/polyfills-es5.ba0dfe4e8ca6e5fd2eca.js": "db2c3178d0132bc6cad483ad4cf9e9e87d8b655e",
     "https://aktools.graueneko.xyz/runtime-es2015.858f8dd898b75fe86926.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
