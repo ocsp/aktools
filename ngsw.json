@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1566205239857,
+  "timestamp": 1566703972333,
   "index": "https://aktools.graueneko.xyz/index.html",
   "assetGroups": [
     {
@@ -10,10 +10,10 @@
       "urls": [
         "https://aktools.graueneko.xyz/favicon.ico",
         "https://aktools.graueneko.xyz/index.html",
-        "https://aktools.graueneko.xyz/main-es2015.cfc31403dafbb2d10692.js",
-        "https://aktools.graueneko.xyz/main-es5.9135b2c57d0b678440c3.js",
+        "https://aktools.graueneko.xyz/main-es2015.5d9549f3b58d231e5e4e.js",
+        "https://aktools.graueneko.xyz/main-es5.b1483e36bb778caf979a.js",
         "https://aktools.graueneko.xyz/polyfills-es2015.e954256595c973372414.js",
-        "https://aktools.graueneko.xyz/polyfills-es5.943113ac054b16d954ae.js",
+        "https://aktools.graueneko.xyz/polyfills-es5.405730e5ac8f727bd7d7.js",
         "https://aktools.graueneko.xyz/runtime-es2015.858f8dd898b75fe86926.js",
         "https://aktools.graueneko.xyz/runtime-es5.741402d1d47331ce975c.js",
         "https://aktools.graueneko.xyz/styles.89840318e3b1e9067ff3.css"
@@ -129,6 +129,7 @@
         "https://aktools.graueneko.xyz/assets/img/help/iconstr1.jpg",
         "https://aktools.graueneko.xyz/assets/img/help/iconstr2.jpg",
         "https://aktools.graueneko.xyz/assets/img/main/Luke_lu.jpg",
+        "https://aktools.graueneko.xyz/assets/img/main/bbaa.png",
         "https://aktools.graueneko.xyz/assets/img/main/crystal.jpg",
         "https://aktools.graueneko.xyz/assets/img/main/github.png",
         "https://aktools.graueneko.xyz/assets/img/main/graueneko.png",
@@ -330,6 +331,7 @@
     "https://aktools.graueneko.xyz/assets/img/help/iconstr1.jpg": "5a5f91191a3b3b5f49ea398ad35447f42239a22b",
     "https://aktools.graueneko.xyz/assets/img/help/iconstr2.jpg": "6f238cbc9421620607edd6e71dfba49ff1c9bc9a",
     "https://aktools.graueneko.xyz/assets/img/main/Luke_lu.jpg": "11387bd07a30f6c73792b8c9580730b1378f4eb3",
+    "https://aktools.graueneko.xyz/assets/img/main/bbaa.png": "912eb5d01c0cd7c3fd8e9f47910c99d3de02ab34",
     "https://aktools.graueneko.xyz/assets/img/main/crystal.jpg": "67a369053056228e1f385b73a16fe714441e5e85",
     "https://aktools.graueneko.xyz/assets/img/main/github.png": "54f831ce58bc8db2372210b2340fc89d7e138b79",
     "https://aktools.graueneko.xyz/assets/img/main/graueneko.png": "764076f0db3a5ebf23746bcdd3137507c419f20f",
@@ -422,11 +424,11 @@
     "https://aktools.graueneko.xyz/assets/img/material/sprite_exp_card_t3.png": "6c51eb54b064bff654357b4cc6bb0b223d0b889c",
     "https://aktools.graueneko.xyz/assets/img/material/sprite_exp_card_t4.png": "0ed2d6dad7658e24f2d333d7e10f1733b844183d",
     "https://aktools.graueneko.xyz/favicon.ico": "7ec4b922393b7e42f34ea41343cbb4c4b6ff87db",
-    "https://aktools.graueneko.xyz/index.html": "a44885ecfdc66277b6ceb4b6e86d74f3d39c8c97",
-    "https://aktools.graueneko.xyz/main-es2015.cfc31403dafbb2d10692.js": "d446b7066b2cfff6313c1db1305536e44df878a3",
-    "https://aktools.graueneko.xyz/main-es5.9135b2c57d0b678440c3.js": "f33aa2871785df956a60a4f6b0c8ea9e4244de84",
+    "https://aktools.graueneko.xyz/index.html": "09dc470c6f0628f3937e606fb2be11a9424b90f5",
+    "https://aktools.graueneko.xyz/main-es2015.5d9549f3b58d231e5e4e.js": "cbcba5bc8b0b7c61e4f3177dce94a4ba37892fb4",
+    "https://aktools.graueneko.xyz/main-es5.b1483e36bb778caf979a.js": "535a6bb0db3234289e813f8dc982e8b2b0d8bb63",
     "https://aktools.graueneko.xyz/polyfills-es2015.e954256595c973372414.js": "ae2d1da695b0816436f21ff43f857a42b11a4e17",
-    "https://aktools.graueneko.xyz/polyfills-es5.943113ac054b16d954ae.js": "042d7744ef82a64c73310f1db253736731a03950",
+    "https://aktools.graueneko.xyz/polyfills-es5.405730e5ac8f727bd7d7.js": "042d7744ef82a64c73310f1db253736731a03950",
     "https://aktools.graueneko.xyz/runtime-es2015.858f8dd898b75fe86926.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
     "https://aktools.graueneko.xyz/runtime-es5.741402d1d47331ce975c.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
     "https://aktools.graueneko.xyz/styles.89840318e3b1e9067ff3.css": "2fd2f2e7f1a6685877eef8a642790eb7a49d075f"
