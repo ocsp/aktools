@@ -19,7 +19,6 @@
           <li mdcListItem *ngFor="let sy of synsText">{{sy}}</li>
         </ul>
       </ng-container>
-
     </section>
     <footer mdcDialogFooter>
       <button mdcButton mdcDialogCancel>关闭</button>
@@ -30,9 +29,12 @@
 </aside>
 <div fxLayout="row wrap" fxLayoutAlign="center center">
   <div fxLayout="row wrap" fxFlex="100" fxFlex.gt-sm="50" fxLayoutAlign="end center" fxLayoutGap="1%" class="options-box">
-    <div fxLayout="row wrap" fxFlex="100" fxFlex.gt-xs="30" fxLayoutAlign="start center">
+    <div fxLayout="row inline" fxFlex="100" fxFlex.gt-xs="30" fxLayoutAlign="start center">
       <div mdcFormField fxFlex="100">
-        <button mdcButton raised dense id="btnReset" (click)="reset()">重置</button>
+        <button mdcButton raised dense id="btnReset" (click)="reset(false)">重置</button>
+      </div>
+      <div mdcFormField fxFlex="100">
+        <button mdcButton raised dense id="btnOnlyResetNeed" (click)="reset(true)">重置需要</button>
       </div>
       <div fxFlex="100" fxShow="true" fxShow.gt-xs="false" class="sepatator">
       </div>
