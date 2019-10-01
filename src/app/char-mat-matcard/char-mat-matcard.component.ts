@@ -39,6 +39,12 @@ export class CharMatMatcardComponent implements OnInit {
       });
       return;
     }
+    // 导入前清空原有需求
+    for (const e in data) {
+      if (data.hasOwnProperty(e)) {
+        data[e].need = 0;
+      }
+    }
     for (const m of this.innerSMats) {
       data[this.allmats[m.id].name].need = m.count;
     }
