@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1575442158627,
+  "timestamp": 1575450590361,
   "index": "https://aktools.graueneko.xyz/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "https://aktools.graueneko.xyz/favicon.ico",
         "https://aktools.graueneko.xyz/index.html",
-        "https://aktools.graueneko.xyz/main-es2015.ff8e9306cb244656143a.js",
-        "https://aktools.graueneko.xyz/main-es5.2e26d2d0307226dcdc3e.js",
+        "https://aktools.graueneko.xyz/main-es2015.952d4752431a779a96bf.js",
+        "https://aktools.graueneko.xyz/main-es5.88c4e252b55252fa5988.js",
         "https://aktools.graueneko.xyz/polyfills-es2015.e954256595c973372414.js",
         "https://aktools.graueneko.xyz/polyfills-es5.943113ac054b16d954ae.js",
         "https://aktools.graueneko.xyz/runtime-es2015.858f8dd898b75fe86926.js",
@@ -406,9 +406,9 @@
     "https://aktools.graueneko.xyz/assets/img/material/sprite_exp_card_t3.png": "6c51eb54b064bff654357b4cc6bb0b223d0b889c",
     "https://aktools.graueneko.xyz/assets/img/material/sprite_exp_card_t4.png": "0ed2d6dad7658e24f2d333d7e10f1733b844183d",
     "https://aktools.graueneko.xyz/favicon.ico": "ca1864b98091318390dae46fbab1232aa2833e2e",
-    "https://aktools.graueneko.xyz/index.html": "93016c6c3f8c2e99f04df33c33d2ec5105fe90e8",
-    "https://aktools.graueneko.xyz/main-es2015.ff8e9306cb244656143a.js": "d0eeeca511f7d9a0538f8e7cc92547ecf20187da",
-    "https://aktools.graueneko.xyz/main-es5.2e26d2d0307226dcdc3e.js": "26c48b0089c28b1bc653dc2e72152126da057060",
+    "https://aktools.graueneko.xyz/index.html": "283ca2c26e1c46f852cebd9d8900259827d9b874",
+    "https://aktools.graueneko.xyz/main-es2015.952d4752431a779a96bf.js": "6af5dc32705a3bfce45109e200044f73b87ffbe6",
+    "https://aktools.graueneko.xyz/main-es5.88c4e252b55252fa5988.js": "4b95cf174fba9f719182fa64312dc3ae57d9bd31",
     "https://aktools.graueneko.xyz/polyfills-es2015.e954256595c973372414.js": "ae2d1da695b0816436f21ff43f857a42b11a4e17",
     "https://aktools.graueneko.xyz/polyfills-es5.943113ac054b16d954ae.js": "042d7744ef82a64c73310f1db253736731a03950",
     "https://aktools.graueneko.xyz/runtime-es2015.858f8dd898b75fe86926.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
