@@ -54,8 +54,14 @@
   border-color: #ffffff;
 }
 
-[mdcDrawerHeaderContent] .mdc-toolbar__title.router-active {
-  border: none;
+[mdcDrawerHeaderContent] {
+  .mdc-toolbar__title.router-active {
+    border: none;
+  }
+  .drawer-header {
+    height: 100%;
+    widows: 100%;
+  }
 }
 
 .router-active.small {
