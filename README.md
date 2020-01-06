@@ -28,6 +28,7 @@
 git clone https://github.com/graueneko/aktools.git
 cd aktools
 npm i -s
+# yarn install
 ng serve -o
 ```
 #### 注意事项
