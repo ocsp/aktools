@@ -4,6 +4,7 @@
   max-width: 1200px;
   margin: auto;
   padding: 1em;
+  background: none;
 }
 
 .img-logos {
@@ -14,11 +15,11 @@
 }
 a:not([class]) {
   text-decoration: none;
-  color: $mdc-theme-primary;
+  color: $text-primary;
 }
 
 p {
-  color: $mdc-theme-primary;
+  color: $text-primary;
 }
 
 h1,
