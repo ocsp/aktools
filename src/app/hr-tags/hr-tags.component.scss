@@ -1,18 +1,25 @@
 @import "../styles/custom.scss";
 
 .mdc-button {
+  border-color: rgba($color-primary, 0);
+  background-color: $color-primary;
   padding: 0em 0.5em;
   min-width: 0px;
   min-height: 0px;
   height: 32px;
+  &:hover {
+    border-color: $color-primary;
+    background-color: $color-primary;
+  }
 }
 
 .mdc-button--outlined:not(.mdc-button--raised){
-  background-color: #000;
+  color: $color-white;
+  background-color: $color-dark;
 }
 
 .mdc-button.btnTitle {
-  background-color: $mdc-theme-secondary;
+  background-color: $color-dark;
   color: transparent;
 }
 
@@ -25,26 +32,30 @@
 }
 
 .mdc-chip--selected {
-  background-color: $color-3;
+  background-color: $color-success;
 }
 
 .mdc-button.selected {
-  background-color: $mdc-theme-secondary;
-  color: $mdc-theme-primary;
+  background-color: $color-dark;
+  border-color: $color-dark;
+  color: $color-white;
 }
 
 
 .btnStarGroup .mdc-button {
-  padding: 0 0.25em;
+  padding: 0 0.36em;
   min-width: 0px;
 }
 
 .btnRowTitle {
+  color: $color-muted;
+  background-color: unset;
   padding: 0 0.25em;
   min-width: 40px;
   margin: 0px;
+  pointer-events: none;
 }
 
 .even-row {
-  background-color: $highlight-background;
+  background-color: rgba($color-dark, 0.5);
 }
