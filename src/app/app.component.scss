@@ -44,11 +44,11 @@
 }
 .mdc-toolbar__title {
   font-size: 1.125em;
-  color: $text-primary;
+  color: $color-primary;
   padding: 0.25em;
 }
 .mdc-toolbar__title.router-active {
-  color: $text-primary;
+  color: $color-primary;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 1em 0.5em 1em 0.5em;
   border-color: #ffffff;
@@ -65,17 +65,18 @@
 }
 
 [mdcDrawerContent] {
-  a:hover {
-    color: $mdc-theme-primary;
-    background-color: $text-primary;
-    i {
-      color: $mdc-theme-primary;
-    }
-  }
   a {
-    color: $text-secondary;
+    color: $color-white;
+    &:hover {
+      color: $color-black;
+      background-color: $color-primary;
+      i {
+        font-size: 32px;
+        color: $color-black;
+      }
+    }
     i {
-      color: $text-primary;
+      color: $color-primary;
     }
   }
 }

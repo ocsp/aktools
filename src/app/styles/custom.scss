@@ -4,8 +4,17 @@ $color-2: #f6ce8c;
 $color-3: #c3e3e5;
 $color-4: #589bad;
 
-$text-primary: rgb(34, 187, 255);
-$text-secondary: rgb(255, 255, 255);
+$color-muted: rgb(153, 153, 153);; // 方舟-文本灰
+$color-primary: rgb(34, 187, 255); // 方舟-蓝
+$color-success: rgb(127, 224, 149); // bootstrap4
+$color-info: rgb(137, 137, 137); // 方舟-灰
+$color-warning: #fe2; // 方舟-黄
+$color-danger: #ec2b00; // 洪炉示岁
+$color-secondary: rgb(137, 137, 137); // 方舟-灰
+$color-dark: rgb(210, 207, 200); // bootstrap4
+$color-black: #000; // 纯黑
+$color-light: rgb(250, 249, 248); //bootstrap4
+$color-white: #fff; // bootstrap4
 
 $mdc-theme-primary: rgba(0, 0, 0, 0.9);
 $mdc-theme-secondary: rgba(137, 137, 137, 0.9);
@@ -16,13 +25,6 @@ $mdc-typography-font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helve
   SimHei, "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "WenQuanYi Zen Hei Sharp",
   sans-serif;
 
-// 该函数随机返回一张图片，目前仅作为body的背景图片
-@function img-url() {
-  $url: 'https://ak.hypergryph.com/assets/index/images/ak/sp/bk.jpg', 'https://ak.hypergryph.com/assets/index/images/ak/sp/bk-news.jpg';
-  $img: nth($url, random(length($url)));
-  @return url($img)
-}
-
 $highlight-background: #e8eaf7;
 button {
   margin: 0.25em;
@@ -30,5 +32,5 @@ button {
 }
 a {
   text-decoration: none;
-  color: $text-primary;
+  color: $color-primary;
 }
