@@ -125,11 +125,12 @@ export class MaterialComponent implements OnInit {
     });
   }
 
-  reset() {
-    const data = {};
-
-    for (const item of this.items) {
-      data[item.name] = new MaterialItemData(item.name);
+  reset(onlyNeed: boolean) {
+    for (const i of this.items) {
+      this.data[i.name].need = 0;
+      if (!onlyNeed) {
+        this.data[i.name].have = 0;
+      }
     }
     this.data = data;
     this.options = {
