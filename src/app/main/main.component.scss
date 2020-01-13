@@ -4,6 +4,7 @@
   max-width: 1200px;
   margin: auto;
   padding: 1em;
+  background: none;
 }
 
 .img-logos {
@@ -12,13 +13,19 @@
   width: auto;
   height: auto;
 }
+
 a:not([class]) {
   text-decoration: none;
-  color: $mdc-theme-primary;
+  color: $color-primary;
+  &:hover {
+    color: $color-white;
+    background-color: $color-primary;
+  }
 }
 
-p {
-  color: $mdc-theme-primary;
+p,
+li {
+  color: $color-muted;
 }
 
 h1,
@@ -29,8 +36,9 @@ h5 {
   font-weight: 600;
 }
 
-.contributor {
+.contributor a {
   padding: 0.5em;
+  text-align: center;
 }
 
 .contributor img {
@@ -48,4 +56,9 @@ h5 {
 }
 .notice{
   font-weight: bold;
+}
+.img-title{
+  width: 128px;
+  height: 128px;
+  margin-right: 1em;
 }

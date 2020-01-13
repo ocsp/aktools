@@ -25,6 +25,7 @@
 
 ## 开发
 
+
 1. 确保你的开发环境中包括 Node.js(10.9.0 或更高版本) 和 npm 包管理器
     * 获取 Node.js，请转到 [nodejs.org](https://nodejs.org)。
         ```bash
@@ -46,6 +47,7 @@
     npm i -s
     ng serve -o
     ```
+
 
 #### 注意事项
 
