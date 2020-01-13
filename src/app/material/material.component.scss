@@ -6,17 +6,26 @@
 .padding-025 {
   padding: 0.25em;
 }
-h2,
+h2 {
+  color: $color-primary;
+}
+
 h4 {
+  color: $color-info;
   margin: 0.25em 0;
 }
 section {
   max-height: 60vh;
   height: 60vh;
+  
+  li {
+    color: $color-muted;
+  }
 }
-a {
+a,
+p {
   text-decoration: none;
-  color: $mdc-theme-primary;
+  color: $color-primary;
 }
 .mdc-list-item {
   height: fit-content;
@@ -29,8 +38,23 @@ a {
   height: 0.5em;
   width: 10em;
 }
-textarea {
-  resize: none;
+
+[mdcTextField] {
+  textarea {
+    color: $color-muted;
+    background-color: rgba($color-dark, 0.1);
+    resize: none;
+    border-color: $color-primary;
+  }
+}
+
+[mdcButton] {
+  color: $color-white;
+  background-color: $color-dark;
+  &:hover {
+    color: $color-black;
+    background-color: $color-primary;
+  }
 }
 
 .mdc-text-field__input {
