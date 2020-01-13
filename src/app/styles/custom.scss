@@ -4,10 +4,22 @@ $color-2: #f6ce8c;
 $color-3: #c3e3e5;
 $color-4: #589bad;
 
-$mdc-theme-primary: #5c638b;
-$mdc-theme-secondary: #87a0c6;
-$mdc-theme-background: #fff;
-$mdc-theme-surface: #fff;
+$color-muted: rgb(153, 153, 153);; // 方舟-文本灰
+$color-primary: rgb(34, 187, 255); // 方舟-蓝
+$color-success: rgb(127, 224, 149); // bootstrap4
+$color-info: rgb(137, 137, 137); // 方舟-灰
+$color-warning: #fe2; // 方舟-黄
+$color-danger: #ec2b00; // 洪炉示岁
+$color-secondary: rgb(137, 137, 137); // 方舟-灰
+$color-dark: #313131; // 方舟-按钮
+$color-black: #000; // 纯黑
+$color-light: rgb(250, 249, 248); //bootstrap4
+$color-white: #fff; // bootstrap4
+
+$mdc-theme-primary: rgba(0, 0, 0, 0.9) !default;
+$mdc-theme-secondary: rgba(137, 137, 137, 0.9) !default;
+$mdc-theme-background: rgba(0, 0, 0, 0.9) !default;
+$mdc-theme-surface: #fff !default;
 $mdc-typography-font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial,
   "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN",
   SimHei, "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "WenQuanYi Zen Hei Sharp",
@@ -20,5 +32,5 @@ button {
 }
 a {
   text-decoration: none;
-  color: $mdc-theme-primary;
+  color: $color-primary;
 }

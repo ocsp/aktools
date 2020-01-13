@@ -30,8 +30,8 @@
 }
 
 .container {
-  @include mdc-theme-prop(background-color, background);
-  @include mdc-theme-prop(color, text-primary-on-background);
+  //@include mdc-theme-prop(background-color, background);
+  //@include mdc-theme-prop(color, text-primary-on-background);
 
   max-width: 1400px;
   margin: auto;
@@ -44,18 +44,41 @@
 }
 .mdc-toolbar__title {
   font-size: 1.125em;
-  color: #ababab;
+  color: $color-primary;
   padding: 0.25em;
 }
 .mdc-toolbar__title.router-active {
-  color: #ffffff;
+  color: $color-primary;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 1em 0.5em 1em 0.5em;
   border-color: #ffffff;
 }
 
-[mdcDrawerHeaderContent] .mdc-toolbar__title.router-active {
-  border: none;
+[mdcDrawerHeaderContent] {
+  .mdc-toolbar__title.router-active {
+    border: none;
+  }
+  .drawer-header {
+    height: 100%;
+    widows: 100%;
+  }
+}
+
+[mdcDrawerContent] {
+  a {
+    color: $color-white;
+    &:hover {
+      color: $color-black;
+      background-color: $color-primary;
+      i {
+        font-size: 32px;
+        color: $color-black;
+      }
+    }
+    i {
+      color: $color-primary;
+    }
+  }
 }
 
 .router-active.small {
