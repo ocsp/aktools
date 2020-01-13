@@ -20,10 +20,10 @@ jobs:
           npm i -s
           npm install -g @angular/cli
           ng build --prod --base-href "https://aktools.graueneko.xyz/"
-          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=sczhg@sczhg.info --name="graueneko"
+          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=graueneko@gmail.com --name="graueneko"
         env:
           CI: true
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.GH_TOKEN }}
           CNAME: aktools.graueneko.xyz
           REPO: github.com/graueneko/aktools.git
           PROJECT: aktools
@@ -40,10 +40,10 @@ jobs:
           npm i -s
           npm install -g @angular/cli
           ng build --prod --base-href "https://aktoolscn.graueneko.xyz/"
-          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=sczhg@sczhg.info --name="graueneko"
+          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=graueneko@gmail.com --name="graueneko"
         env:
           CI: true
           TOKEN: ${{ secrets.CODING_TOKEN }}
           CNAME: aktoolscn.graueneko.xyz
-          REPO: github.com/graueneko/aktools.git
+          REPO: git.dev.tencent.com/graueneko/aktools.git
           PROJECT: aktools
