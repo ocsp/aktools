@@ -11,3 +11,4 @@ trim_trailing_whitespace = true
 [*.md]
 max_line_length = off
 trim_trailing_whitespace = false
+indent_size = 4 # github 只识别 4 个空格的缩进

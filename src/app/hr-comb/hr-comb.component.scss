@@ -37,16 +37,17 @@
 
 table {
   width: 100%;
-}
-th {
-  background: $color-3;
-  color: #fff;
-  font-size: 1em;
-  padding: 0px;
+  td {
+    background: rgba($color-dark, 0.9);
+    color: rgba(#fff, 0.3);
+    font-size: 1em;
+    padding: 0px;
+  }
 }
 
 [mdcCard] {
   margin: 8px 4px;
+  background: rgba($color-dark, 0.6);
 }
 
 
@@ -77,7 +78,7 @@ th {
 }
 
 .gap-row {
-  background-color: $highlight-background;
+  background-color: rgba($color-dark, 0.9);
 }
 
 [mdcListDivider] {

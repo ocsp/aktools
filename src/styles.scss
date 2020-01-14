@@ -4,6 +4,8 @@
 // import theming for all mdc components:
 @import "material-components-web/material-components-web";
 
+body, html {height: 100%;}
+
 body {
   font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans",
     "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei",
@@ -19,6 +21,16 @@ body {
 
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
+
+  color: $color-primary;
+
+  background-attachment: fixed;
+  background-color: rgb(0, 0, 0);
+  // background-image: url(https://ak.hypergryph.com/assets/index/images/ak/pc/story/bk.jpg);
+  background-image: url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .mdc-button {
