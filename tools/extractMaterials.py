@@ -8,7 +8,7 @@ import requests
 # python3 ./tools/extractMaterials.py
 
 # https://github.com/Kengxxiao/ArknightsGameData.git
-base = "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN"
+base = "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata"
 
 # 某次更新后上面所用的数据出现了乱码问题，可以clone到本地后手动修复，此时需要用以下路径
 # base = r"C:\Users\user\ArknightsGameData\zh_CN\gamedata"
@@ -17,7 +17,7 @@ def readJson(path):
     if base.startswith("http"):
         return requests.get(base + path
         # 如果需要可以取消注释以使用代理，请注意socks5代理需要 pip install -U requests[socks]
-        # , proxies = { 'http': 'socks5://127.0.0.1:1080', 'https': 'socks5://127.0.0.1:1080'}
+        , proxies = { 'http': 'socks5://127.0.0.1:1086', 'https': 'socks5://127.0.0.1:1086'}
         ).json()
     else:
         with open(base + path, encoding='utf-8') as f:
