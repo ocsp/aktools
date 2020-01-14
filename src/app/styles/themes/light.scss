@@ -11,10 +11,11 @@ $mdc-theme-on-surface: #000;
 :root {
     --hr-gap-background: #e8eaf7;
     --hr-comb-background: #ffffff;
-    --hr-selected-background: $mdc-theme-primary;
-    --hr-unselected-background: $mdc-theme-on-primary;
-    --hr-selected-text: $mdc-theme-on-primary;
-    --hr-unselected-text: $mdc-theme-primary;
+    --hr-selected-background: #5c638b;
+    --hr-unselected-background: #fff;
+    --hr-selected-text: #fff;
+    --hr-unselected-text: #5c638b;
+    --hr-tag-border: #5c638b;
 }
 
 @import "material-components-web/material-components-web";

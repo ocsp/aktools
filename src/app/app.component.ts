@@ -74,11 +74,13 @@ export class AppComponent {
   }
   toggleTheme() {
     if(this.theme==="light"){
-      this.switchTheme.setTheme("dark");
       this.theme="dark";
+      this.switchTheme.setTheme(this.theme);
+      this.fetchService.setLocalStorage("theme", this.theme);
     }else {
-      this.switchTheme.setTheme("light");
       this.theme="light";
+      this.switchTheme.setTheme(this.theme);
+      this.fetchService.setLocalStorage("theme", this.theme);
     }
   }
   doUpdate() {

@@ -8,12 +8,6 @@ input,
 select {
   text-align: center;
 }
-div {
-  color: var(--mdc-theme-on-surface);
-}
-[mdcButton] {
-  color: var(--mdc-theme-on-surface);
-}
 .mdc-button--dense {
   min-width: 20px;
 }
@@ -34,7 +28,6 @@ div {
 
 [mdcCard] {
   margin: 0.5em;
-  background-color: rgba($color-black, 0.5);
 
   .mat-icon {
     max-height: 48px;
@@ -48,12 +41,10 @@ div {
 }
 
 [mdcButton] {
-  color: $color-white;
-  background-color: $color-dark;
 
   &:hover, &:checked {
-    color: $color-black;
-    background-color: $color-primary;
+    color: var(--mdc-theme-on-primary);
+    background-color: var(--mdc-theme-primary);
   }
   &:disabled {
     color: $color-muted;

@@ -40,7 +40,7 @@ jobs:
           npm i -s
           npm install -g @angular/cli
           ng build --prod --base-href "https://aktoolscn.graueneko.xyz/"
-          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=graueneko@gmail.com --name="graueneko"
+          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=graueneko@gmail.com --name="graueneko"  --branch=coding-pages
         env:
           CI: true
           TOKEN: ${{ secrets.CODING_TOKEN }}

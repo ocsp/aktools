@@ -15,11 +15,12 @@
 .mdc-button--outlined:not(.mdc-button--raised){
   color: var(--hr-unselected-text);
   background-color: var(--hr-unselected-background);
+  border-color: var(--hr-tag-border);
 }
 .mdc-button--outlined.mdc-button--raised {
   color: var(--hr-selected-text);
   background-color: var(--hr-selected-background);
-  border: var(--hr-selected-background);
+  border-color: var(--hr-selected-background);
 }
 
 .mdc-button.btnTitle {
