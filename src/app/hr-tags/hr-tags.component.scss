@@ -1,26 +1,30 @@
 @import "../styles/custom.scss";
 
 .mdc-button {
-  border-color: rgba($color-primary, 0);
-  background-color: $color-primary;
+  border-color: var(--hr-unselected-background);
+  background-color: var(--hr-unselected-background);
   padding: 0em 0.5em;
   min-width: 0px;
   min-height: 0px;
   height: 32px;
   &:hover {
-    border-color: $color-primary;
-    background-color: $color-primary;
+    border-color: var(--mdc-theme-secondary);
   }
 }
 
 .mdc-button--outlined:not(.mdc-button--raised){
-  color: $color-white;
-  background-color: $color-dark;
+  color: var(--hr-unselected-text);
+  background-color: var(--hr-unselected-background);
+}
+.mdc-button--outlined.mdc-button--raised {
+  color: var(--hr-selected-text);
+  background-color: var(--hr-selected-background);
+  border: var(--hr-selected-background);
 }
 
 .mdc-button.btnTitle {
-  background-color: $color-dark;
-  color: transparent;
+  background-color: var(--hr-unselected-background);
+  color: var(--hr-unselected-text);
 }
 
 .no-padding {
@@ -31,24 +35,13 @@
   margin: 2px;
 }
 
-.mdc-chip--selected {
-  background-color: $color-success;
-}
-
-.mdc-button.selected {
-  background-color: $color-dark;
-  border-color: $color-dark;
-  color: $color-white;
-}
-
-
 .btnStarGroup .mdc-button {
   padding: 0 0.36em;
   min-width: 0px;
 }
 
 .btnRowTitle {
-  color: $color-muted;
+  color: var(--hr-unselected-text);
   background-color: unset;
   padding: 0 0.25em;
   min-width: 40px;
@@ -57,5 +50,5 @@
 }
 
 .even-row {
-  background-color: rgba($color-dark, 0.5);
+  background-color: var(--hr-gap-background);
 }

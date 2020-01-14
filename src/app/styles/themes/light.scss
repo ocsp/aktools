@@ -1,0 +1,20 @@
+$mdc-theme-primary   : #5c638b;
+$mdc-theme-on-primary: #fff;
+
+$mdc-theme-secondary   : #87a0c6;
+$mdc-theme-on-secondary: #000;
+$mdc-theme-background  : #fff;
+
+$mdc-theme-surface : #fff;
+$mdc-theme-on-surface: #000;
+
+:root {
+    --hr-gap-background: #e8eaf7;
+    --hr-comb-background: #ffffff;
+    --hr-selected-background: $mdc-theme-primary;
+    --hr-unselected-background: $mdc-theme-on-primary;
+    --hr-selected-text: $mdc-theme-on-primary;
+    --hr-unselected-text: $mdc-theme-primary;
+}
+
+@import "material-components-web/material-components-web";

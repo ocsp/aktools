@@ -14,16 +14,12 @@ section {
   max-height: 60vh;
   height: 60vh;
 }
-a {
-  text-decoration: none;
-  color: $mdc-theme-primary;
-}
 .mdc-list-item {
   height: fit-content;
   padding: 0.25em 0;
 }
 #btnReset,
-#btnOnlyResetNeed {
+#btnResetNeed {
   background-color: $color-1;
 }
 .sepatator {

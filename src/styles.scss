@@ -2,7 +2,7 @@
 @import "./app/styles/custom.scss";
 
 // import theming for all mdc components:
-@import "material-components-web/material-components-web";
+// @import "material-components-web/material-components-web";
 
 body, html {height: 100%;}
 
@@ -22,15 +22,6 @@ body {
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
 
-  color: $color-primary;
-
-  background-attachment: fixed;
-  background-color: rgb(0, 0, 0);
-  // background-image: url(https://ak.hypergryph.com/assets/index/images/ak/pc/story/bk.jpg);
-  background-image: url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .mdc-button {

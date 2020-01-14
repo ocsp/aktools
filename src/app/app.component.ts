@@ -2,6 +2,10 @@ import { Component, HostListener } from '@angular/core';
 import { MdcSnackbarService } from '@blox/material';
 import { SwUpdate } from '@angular/service-worker';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import {SwitchThemeService} from './switch-theme.service';
+import { Observable } from 'rxjs';
+import { FetchService } from './fetch.service';
+
 declare var ga: Function;
 
 @Component({
@@ -17,6 +21,7 @@ export class AppComponent {
   nav: any;
   temporary = 'temporary';
   showNavbar = true;
+  theme: string;
 
   toggleDrawer(): void {
     this.drawerOpen = !this.drawerOpen;
@@ -34,7 +39,9 @@ export class AppComponent {
   constructor(private snackBar: MdcSnackbarService,
               private swUpdate: SwUpdate,
               private router: Router,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private switchTheme: SwitchThemeService,
+              private fetchService: FetchService) {
     this.baseUrl = window.location.origin;
     this.nav = window.navigator;
     if (this.swUpdate.isEnabled) {
@@ -61,6 +68,18 @@ export class AppComponent {
     this.activatedRoute.queryParams.subscribe(params => {
       this.showNavbar = !('hidenav' in params);
     });
+
+    this.theme = this.fetchService.getLocalStorage("theme", "dark");
+    this.switchTheme.setTheme(this.theme);
+  }
+  toggleTheme() {
+    if(this.theme==="light"){
+      this.switchTheme.setTheme("dark");
+      this.theme="dark";
+    }else {
+      this.switchTheme.setTheme("light");
+      this.theme="light";
+    }
   }
   doUpdate() {
     this.swUpdate.activateUpdate().then(() => window.location.reload());
