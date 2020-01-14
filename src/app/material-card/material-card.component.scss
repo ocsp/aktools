@@ -25,9 +25,12 @@ $img-size: 48px;
 
 input,
 select {
+  color: $color-primary;
   text-align: center;
 }
+
 .mdc-button--dense {
+  color: $color-primary;
   min-width: 20px;
   width: 20px;
   margin: 0;
@@ -46,6 +49,8 @@ select {
   margin: 0.25em 0.125em;
   border: 0.125em solid rgba(0, 0, 0, 0.125);
   border-radius: 2em 0.5em 2em 0.5em;
+  color: $color-primary;
+  background-color: rgba($color-black, 0.5);
 
   .card-title {
     color: var(--mdc-theme-on-surface);
@@ -59,9 +64,19 @@ select {
     font-size: 0.75em;
     text-align: end;
   }
+  
   .material-detail {
     color: var(--mdc-theme-secondary);
     padding: 0;
+  }
+}
+
+[mdcTextField] {
+  input {
+    color: $color-white;
+  }
+  label {
+    color: $color-primary;
   }
 }
 

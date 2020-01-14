@@ -1,3 +1,5 @@
+@import "../styles/custom.scss";
+
 img[src=""],
 img:not([src]) {
   opacity: 0;
@@ -32,6 +34,7 @@ div {
 
 [mdcCard] {
   margin: 0.5em;
+  background-color: rgba($color-black, 0.5);
 
   .mat-icon {
     max-height: 48px;
@@ -43,6 +46,27 @@ div {
     padding: 0.25em;
   }
 }
+
+[mdcButton] {
+  color: $color-white;
+  background-color: $color-dark;
+
+  &:hover, &:checked {
+    color: $color-black;
+    background-color: $color-primary;
+  }
+  &:disabled {
+    color: $color-muted;
+    background-color: $color-black;
+  }
+}
+
+// [mdcTextField] {
+//   input {
+//     color: $color-white;
+//   }
+// }
+
 [mdcLinearProgress] {
   max-width:1200px;
   margin:0 auto 10px auto;
@@ -51,6 +75,11 @@ canvas {
   width:100%;
   max-width:  1200px;
 }
+
+p, input, select {
+  color: $color-muted;
+}
+
 .select {
   border:blue 2px solid;
 }
