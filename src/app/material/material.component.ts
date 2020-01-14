@@ -132,7 +132,6 @@ export class MaterialComponent implements OnInit {
         this.data[i.name].have = 0;
       }
     }
-    this.data = data;
     this.options = {
       showOnly3plus: true,
       filtered: false,
