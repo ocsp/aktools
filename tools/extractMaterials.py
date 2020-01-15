@@ -15,10 +15,12 @@ base = "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_
 
 def readJson(path):
     if base.startswith("http"):
-        return requests.get(base + path
+        r = requests.get(base + path
         # 如果需要可以取消注释以使用代理，请注意socks5代理需要 pip install -U requests[socks]
-        , proxies = { 'http': 'socks5://127.0.0.1:1086', 'https': 'socks5://127.0.0.1:1086'}
-        ).json()
+        # , proxies = { 'http': 'socks5://127.0.0.1:1086', 'https': 'socks5://127.0.0.1:1086'}
+        )
+        r.encoding = "utf-8"
+        return r.json()
     else:
         with open(base + path, encoding='utf-8') as f:
             return json.load(f, encoding='utf-8')

@@ -1,12 +1,9 @@
-name: Node CI
+name: Auto update data
 
-on:
-  push:
-    branches:
-      - master
+on: repository_dispatch
 
 jobs:
-  build-github:
+  update-github:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,17 +22,17 @@ jobs:
           npm i -s
           npm install -g @angular/cli
           ng build --prod --base-href "https://aktools.graueneko.xyz/"
-          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=graueneko@gmail.com --name="graueneko"  --message="功能更新"
+          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=graueneko@gmail.com --name="graueneko" --message="数据更新"
         env:
           CI: true
           TOKEN: ${{ secrets.GH_TOKEN }}
           CNAME: aktools.graueneko.xyz
           REPO: github.com/graueneko/aktools.git
           PROJECT: aktools
-  build-coding:
+  update-coding:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1      
+      - uses: actions/checkout@v1
       - uses: actions/setup-python@v1
         with:
           python-version: '3.7'
@@ -50,7 +47,7 @@ jobs:
           npm i -s
           npm install -g @angular/cli
           ng build --prod --base-href "https://aktoolscn.graueneko.xyz/"
-          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=graueneko@gmail.com --name="graueneko"  --branch=coding-pages --message="功能更新"
+          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=graueneko@gmail.com --name="graueneko"  --branch=coding-pages --message="数据更新"
         env:
           CI: true
           TOKEN: ${{ secrets.CODING_TOKEN }}
