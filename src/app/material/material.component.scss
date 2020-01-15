@@ -1,5 +1,22 @@
 @import "../styles/custom.scss";
+[mdcDialog] {
+  color: var(--mdc-theme-text-primary-on-background);
 
+  .mdc-dialog__body,
+  a {
+    color: var(--mdc-theme-text-secondary-on-background);
+  }
+
+  [mdcButton] {
+    &:hover {
+      color: var(--mdc-theme-on-primary);
+      background-color: var(--mdc-theme-primary);
+    }
+  }
+  [mdcDialogCancel] {
+    color: var(--mdc-theme-on-surface);
+  }
+}
 .options-box {
   padding: 0.5em 1em;
 }
@@ -37,18 +54,15 @@ section {
   }
 }
 
-[mdcButton] {
-  &:hover {
-    color: var(--mdc-theme-on-primary);
-    background-color: var(--mdc-theme-primary);
-  }
-}
-
 .mdc-text-field__input {
   padding: 0.25em 0.75em;
+  font-size: small;
 }
 
 .dialog-data {
   max-width: 600px;
-  max-height: 500px;
+  max-height: 600px;
+}
+.hint {
+  line-height: 0.5em;
 }
