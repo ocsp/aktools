@@ -22,13 +22,24 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "extractCss": true,
             "assets": [
               "src/favicon.ico",
               "src/assets",
               "src/manifest.webmanifest"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/app/styles/themes/dark.scss",
+                "lazy": true,
+                "bundleName": "dark"
+              },
+              {
+                "input": "src/app/styles/themes/light.scss",
+                "lazy": true,
+                "bundleName": "light"
+              }
             ],
             "stylePreprocessorOptions": {
               "includePaths": [

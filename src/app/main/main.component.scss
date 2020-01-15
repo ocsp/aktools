@@ -5,6 +5,11 @@
   margin: auto;
   padding: 1em;
   background: none;
+  color: var(--mdc-theme-text-primary-on-background);
+}
+
+a {
+  color: var(--mdc-theme-on-surface);
 }
 
 .img-logos {
@@ -14,19 +19,6 @@
   height: auto;
 }
 
-a:not([class]) {
-  text-decoration: none;
-  color: $color-primary;
-  &:hover {
-    color: $color-white;
-    background-color: $color-primary;
-  }
-}
-
-p,
-li {
-  color: $color-muted;
-}
 
 h1,
 h2,

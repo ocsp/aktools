@@ -15,17 +15,17 @@
 
 .option-0 {
   color: #1a1d1e;
-  background-color: rgba($color-2, 0.6);
+  background-color: $color-2;
 }
 .option-1 {
   color: #1a1d1e;
-  background-color: rgba($color-3, 0.6);
+  background-color: $color-3;
 }
 .option-2 {
   color: white;
-  background-color: rgba($color-4, 0.6);
+  background-color: $color-4;
 }
 #btnClear {
   color: #fff;
-  background-color: rgba($color-danger, 0.6);
+  background-color: $color-1;
 }

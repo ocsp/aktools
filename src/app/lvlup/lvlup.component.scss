@@ -6,6 +6,7 @@
     min-width: 20px;
     margin: 0;
     padding: 0;
+    color: var(--mdc-theme-on-surface);
 }
 .input-field{
     width: 100%;
@@ -42,11 +43,9 @@ input, select {
     min-width: 280px;
     max-width: 100%;
     width: 350px;
-    color: $color-muted;
-    background-color: rgba($color-dark, 0.5);
+    color: var(--mdc-theme-on-surface);
 
     .custom-card-group-heading {
-        color: $color-primary;
         font-size: 0.875em;
         padding: 8px 16px;
         text-align: center;
@@ -62,17 +61,11 @@ input, select {
     th, td{
         padding: 0.375em 1em;
     }
+    margin: 1em 0 0 0;
 }
 
 .btnCalc {
     color: $color-primary;
     margin: 1em 0 0 0;
     width: 50%;
-    &:hover, &:focus {
-        color: $color-black;
-        background-color: $color-primary;
-    }
-}
-[mdcCard] {
-    margin: 1em 0 0 0;
 }

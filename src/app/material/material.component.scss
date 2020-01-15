@@ -1,38 +1,43 @@
 @import "../styles/custom.scss";
+[mdcDialog] {
+  color: var(--mdc-theme-text-primary-on-background);
 
+  .mdc-dialog__body,
+  a {
+    color: var(--mdc-theme-text-secondary-on-background);
+  }
+
+  [mdcButton] {
+    &:hover {
+      color: var(--mdc-theme-on-primary);
+      background-color: var(--mdc-theme-primary);
+    }
+  }
+  [mdcDialogCancel] {
+    color: var(--mdc-theme-on-surface);
+  }
+}
 .options-box {
   padding: 0.5em 1em;
 }
 .padding-025 {
   padding: 0.25em;
 }
-h2 {
-  color: $color-primary;
-}
 
 h4 {
-  color: $color-info;
   margin: 0.25em 0;
 }
 section {
   max-height: 60vh;
   height: 60vh;
   
-  li {
-    color: $color-muted;
-  }
-}
-a,
-p {
-  text-decoration: none;
-  color: $color-primary;
 }
 .mdc-list-item {
   height: fit-content;
   padding: 0.25em 0;
 }
 #btnReset,
-#btnOnlyResetNeed {
+#btnResetNeed {
   background-color: $color-1;
 }
 .sepatator {
@@ -49,20 +54,15 @@ p {
   }
 }
 
-[mdcButton] {
-  color: $color-white;
-  background-color: $color-dark;
-  &:hover {
-    color: $color-black;
-    background-color: $color-primary;
-  }
-}
-
 .mdc-text-field__input {
   padding: 0.25em 0.75em;
+  font-size: small;
 }
 
 .dialog-data {
   max-width: 600px;
-  max-height: 500px;
+  max-height: 600px;
+}
+.hint {
+  line-height: 0.5em;
 }
