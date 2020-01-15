@@ -13,3 +13,12 @@ select {
 div {
   color: var(--mdc-theme-on-surface);
 }
+
+option,
+.tpob {
+  color: var(--mdc-theme-text-primary-on-background);
+}
+
+.mdc-select__native-control:focus ~ .mdc-floating-label {
+  color: var(--mdc-theme-text-primary-on-background);
+}
