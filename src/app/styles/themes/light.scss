@@ -20,6 +20,10 @@ $mdc-theme-on-surface: #000;
 
 @import "material-components-web/material-components-web";
 
+#aside-logo {
+    filter: invert(100%);
+}
+
 body {
 
     background-attachment: fixed;
