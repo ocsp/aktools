@@ -26,7 +26,7 @@ jobs:
           npm i -s
           npm install -g @angular/cli
           ng build --prod --base-href "https://aktools.graueneko.xyz/"
-          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=graueneko@gmail.com --name="graueneko"  --message="功能更新"
+          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=graueneko@gmail.com --name="graueneko"
         env:
           CI: true
           TOKEN: ${{ secrets.GH_TOKEN }}
@@ -47,11 +47,12 @@ jobs:
           node-version: "10.15.3"
       - name: npm install, build, and deploy
         run: |
+          pip install requests
           python ./tools/extractMaterials.py 
           npm i -s
           npm install -g @angular/cli
           ng build --prod --base-href "https://aktoolscn.graueneko.xyz/"
-          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=graueneko@gmail.com --name="graueneko"  --branch=coding-pages --message="功能更新"
+          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=graueneko@gmail.com --name="graueneko"  --branch=coding-pages
         env:
           CI: true
           TOKEN: ${{ secrets.CODING_TOKEN }}
