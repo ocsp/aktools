@@ -21,6 +21,7 @@ jobs:
           node-version: "10.15.3"
       - name: npm install, build, and deploy
         run: |
+          pip install requests
           python ./tools/extractMaterials.py 
           npm i -s
           npm install -g @angular/cli
