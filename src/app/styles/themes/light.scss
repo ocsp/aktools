@@ -20,7 +20,8 @@ $mdc-theme-on-surface: #000;
 
 @import "material-components-web/material-components-web";
 
-#aside-logo {
+#aside-logo,
+img[src$="github.png"] {
     filter: invert(100%);
 }
 
