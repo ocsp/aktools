@@ -64,7 +64,7 @@ jobs:
           python ./tools/extractMaterials.py
           git config --global user.name "Neko Bot"
           git config --global user.email "graueneko@gmail.com"
-          git remote set-url origin https://x-access-token:$TOKEN@$REPO
+          git remote set-url origin https://graueneko:$TOKEN@$REPO
           git checkout "${GITHUB_REF:11}"
           git commit -am "数据更新"
           git push
