@@ -10,13 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v1      
+      - uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+          architecture: 'x64'
       - name: Use Node.js 10.15.3
         uses: actions/setup-node@v1
         with:
           node-version: "10.15.3"
       - name: npm install, build, and deploy
         run: |
+          pip install requests
+          python ./tools/extractMaterials.py 
           npm i -s
           npm install -g @angular/cli
           ng build --prod --base-href "https://aktools.graueneko.xyz/"
@@ -30,17 +36,23 @@ jobs:
   build-coding:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v1      
+      - uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+          architecture: 'x64'
       - name: Use Node.js 10.15.3
         uses: actions/setup-node@v1
         with:
           node-version: "10.15.3"
       - name: npm install, build, and deploy
         run: |
+          pip install requests
+          python ./tools/extractMaterials.py 
           npm i -s
           npm install -g @angular/cli
           ng build --prod --base-href "https://aktoolscn.graueneko.xyz/"
-          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=graueneko@gmail.com --name="graueneko"
+          npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=graueneko@gmail.com --name="graueneko"  --branch=coding-pages
         env:
           CI: true
           TOKEN: ${{ secrets.CODING_TOKEN }}

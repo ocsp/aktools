@@ -15,7 +15,7 @@
 其中 hidenav 全局有效, hidetags 和 tags 仅对公开招募页面有效。
 
 例如：
-<https://aktools.graueneko.xyz/hr?hidenav=&hidetags=&tags=女性干员+爆发+新手+资深干员+快速复活>
+<https://aktools.graueneko.xyz/hr?hidenav=&hidetags=&tags=爆发+新手+资深干员+快速复活>
 
 ## 反馈
 
@@ -26,25 +26,32 @@
 ## 开发
 
 
-1. 确保你的开发环境中包括 Node.js(10.9.0 或更高版本) 和 npm 包管理器
+1. 确保你的开发环境中包括 Node.js(10.9.0 或更高版本) 和 npm/yarn 包管理器
     * 获取 Node.js，请转到 [nodejs.org](https://nodejs.org)。
+    * 获取 [yarn](https://baike.baidu.com/item/yarn)，请转到[yarnpkg.com](https://yarnpkg.com/zh-Hans/docs/install#windows-stable)（非必须安装，该网站可能需要梯子）
         ```bash
         # 检查 Node.js 版本
         node -v
         # 检查 npm 版本
         npm -v
         ```
-2. 安装 Angular CLI
+2. 安装 cnpm 命令行工具（推荐）
     ```bash
-    npm install -g @angular/cli
+    npm install -g cnpm --registry=https://registry.npm.taobao.org
+    ```
+3. 安装 Angular CLI
+    ```bash
+    cnpm install -g @angular/cli
     # 检查 Angular 版本
     ng version
     ```
-3. 克隆项目
+4. 克隆项目
     ```bash
     git clone https://github.com/graueneko/aktools.git
     cd aktools
-    npm i -s
+    cnpm i -s
+    # yarn 用户：
+    # yarn
     ng serve -o
     ```
 

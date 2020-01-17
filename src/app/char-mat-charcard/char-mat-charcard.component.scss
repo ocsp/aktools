@@ -21,19 +21,17 @@ input, select {
     padding: 0.25em;
     border: 0.125em solid rgba(0, 0, 0, 0.125);
     border-radius: 2em 0.5em 0.5em 0.5em;
+    color: var(--mdc-theme-on-surface);
   
     .card-heading {
-      color: $mdc-theme-primary;
       padding: 8px 16px;
       text-align: center;
     }
   
     .material-source {
-      color: $mdc-theme-secondary;
       font-size: 0.875em;
     }
     .material-detail {
-      color: $mdc-theme-primary;
       padding: 0.25em;
     }
   }
@@ -63,7 +61,7 @@ input, select {
   [mdcButton]{
     font-size: 0.875em;
     padding: 0px;
-    
+    color: var(--mdc-theme-on-surface);
   }
   [mdcButton].btnTitle{
     min-width: 54px;

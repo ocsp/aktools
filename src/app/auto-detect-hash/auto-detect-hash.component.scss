@@ -1,3 +1,5 @@
+@import "../styles/custom.scss";
+
 img[src=""],
 img:not([src]) {
   opacity: 0;
@@ -37,6 +39,25 @@ select {
     padding: 0.25em;
   }
 }
+
+[mdcButton] {
+
+  &:hover, &:checked {
+    color: var(--mdc-theme-on-primary);
+    background-color: var(--mdc-theme-primary);
+  }
+  &:disabled {
+    color: $color-muted;
+    background-color: $color-black;
+  }
+}
+
+// [mdcTextField] {
+//   input {
+//     color: $color-white;
+//   }
+// }
+
 [mdcLinearProgress] {
   max-width:1200px;
   margin:0 auto 10px auto;
@@ -45,6 +66,11 @@ canvas {
   width:100%;
   max-width:  1200px;
 }
+
+p, input, select {
+  color: $color-muted;
+}
+
 .select {
   border:blue 2px solid;
 }

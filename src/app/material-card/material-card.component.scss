@@ -25,9 +25,12 @@ $img-size: 48px;
 
 input,
 select {
+  // color: $color-primary;
   text-align: center;
 }
+
 .mdc-button--dense {
+  color: var(--mdc-theme-secondary);
   min-width: 20px;
   width: 20px;
   margin: 0;
@@ -48,19 +51,20 @@ select {
   border-radius: 2em 0.5em 2em 0.5em;
 
   .card-title {
-    color: $mdc-theme-primary;
+    color: var(--mdc-theme-on-surface);
     text-align: start;
     font-size: 0.875em;
     font-weight: 700;
   }
 
   .material-source {
-    color: $mdc-theme-secondary;
+    color: var(--mdc-theme-secondary);
     font-size: 0.75em;
     text-align: end;
   }
+  
   .material-detail {
-    color: $mdc-theme-primary;
+    color: var(--mdc-theme-secondary);
     padding: 0;
   }
 }
@@ -81,7 +85,7 @@ select {
   border-color: #c3e3e5;
 }
 .mdc-card.op-card {
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 .need-button {
@@ -100,4 +104,8 @@ select {
 .btnMerge{
   width:32px;
   height:32px;
+}
+.btnMerge.mdc-button--raised {
+  background-color: var(--mdc-theme-primary);
+  color: var(--mdc-theme-on-primary);
 }

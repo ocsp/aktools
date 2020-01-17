@@ -1,25 +1,51 @@
 @import '../styles/custom.scss';
 
 .mdc-button--dense {
+    color: $color-muted;
+    // background-color: $color-dark;
     min-width: 20px;
     margin: 0;
     padding: 0;
+    color: var(--mdc-theme-on-surface);
 }
 .input-field{
     width: 100%;
     margin: 0.25em;
 }
+
 input, select {
+    // background-color: $color-primary;
     text-align: center;
+}
+
+
+[mdcSelect] {
+    [mdcSelectControl] {
+        color: $color-primary;
+        // background-color: rgba($color-dark, 0.5);
+    }
+    label {
+        color: $color-primary;
+        // background-color: $color-black;
+    }
+}
+
+[mdcTextField] {
+    input {
+        color: $color-primary;
+    }
+    label {
+        color: $color-primary;
+    }
 }
 
 [mdcCard] {
     min-width: 280px;
     max-width: 100%;
     width: 350px;
+    color: var(--mdc-theme-on-surface);
 
     .custom-card-group-heading {
-        color: $mdc-theme-primary;
         font-size: 0.875em;
         padding: 8px 16px;
         text-align: center;
@@ -35,12 +61,11 @@ input, select {
     th, td{
         padding: 0.375em 1em;
     }
+    margin: 1em 0 0 0;
 }
 
 .btnCalc {
+    color: $color-primary;
     margin: 1em 0 0 0;
     width: 50%;
-}
-[mdcCard] {
-    margin: 1em 0 0 0;
 }

@@ -3,13 +3,13 @@
     <div fxFlex="26">
       <div mdcSelect class="input-field">
         <select mdcSelectControl [(ngModel)]="star" (change)="onFilterChange()">
-          <option value="0" selected>全部</option>
-          <option value="6">6★</option>
-          <option value="5">5★</option>
-          <option value="4">4★</option>
-          <option value="3">3★</option>
-          <option value="2">2★</option>
-          <option value="1">1★</option>
+          <option value="0" class="tpob" selected>全部</option>
+          <option value="6" class="tpob">6★</option>
+          <option value="5" class="tpob">5★</option>
+          <option value="4" class="tpob">4★</option>
+          <option value="3" class="tpob">3★</option>
+          <option value="2" class="tpob">2★</option>
+          <option value="1" class="tpob">1★</option>
         </select>
         <label mdcFloatingLabel class="mdc-floating-label--float-above">星级</label>
       </div>
@@ -17,15 +17,15 @@
     <div fxFlex="26">
       <div mdcSelect class="input-field">
         <select mdcSelectControl [(ngModel)]="prof" (change)="onFilterChange()">
-          <option value="全部" selected>全部</option>
-          <option value="辅助">辅助</option>
-          <option value="近卫">近卫</option>
-          <option value="先锋">先锋</option>
-          <option value="特种">特种</option>
-          <option value="重装">重装</option>
-          <option value="术师">术师</option>
-          <option value="狙击">狙击</option>
-          <option value="医疗">医疗</option>
+          <option value="全部" class="tpob" selected>全部</option>
+          <option value="辅助" class="tpob">辅助</option>
+          <option value="近卫" class="tpob">近卫</option>
+          <option value="先锋" class="tpob">先锋</option>
+          <option value="特种" class="tpob">特种</option>
+          <option value="重装" class="tpob">重装</option>
+          <option value="术师" class="tpob">术师</option>
+          <option value="狙击" class="tpob">狙击</option>
+          <option value="医疗" class="tpob">医疗</option>
         </select>
         <label mdcFloatingLabel class="mdc-floating-label--float-above">职业</label>
       </div>
@@ -33,7 +33,7 @@
     <div fxFlex="26">
       <div mdcSelect class="input-field">
         <select mdcSelectControl [(ngModel)]="char">
-          <option value="{{ch}}" *ngFor="let ch of joindChars">{{ch}}</option>
+          <option value="{{ch}}" class="tpob" *ngFor="let ch of joindChars">{{ch}}</option>
         </select>
         <label mdcFloatingLabel class="mdc-floating-label--float-above">干员</label>
       </div>
