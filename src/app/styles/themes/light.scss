@@ -19,3 +19,18 @@ $mdc-theme-on-surface: #000;
 }
 
 @import "material-components-web/material-components-web";
+
+#aside-logo,
+img[src$="github.png"] {
+    filter: invert(100%);
+}
+
+body {
+
+    background-attachment: fixed;
+    background-color: white;
+    background-image: url(https://ak.hypergryph.com/assets/index/images/ak/pc/story/bk.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
