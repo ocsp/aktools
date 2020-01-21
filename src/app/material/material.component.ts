@@ -184,7 +184,7 @@ export class MaterialComponent implements OnInit {
       if (this.data[m]) {
         const mt = this.data[m];
         const mi = this.mIdx[m];
-        if (mi.id.startsWith('30')) {
+        if (mi.id.startsWith('30') || mi.id.startsWith('31')) {
           if (mt.have !== 0) { owned[m] = mt.have; }
           if (mt.need !== 0) { required[m] = mt.need; }
         }
