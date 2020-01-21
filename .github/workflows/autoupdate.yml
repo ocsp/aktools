@@ -20,11 +20,8 @@ jobs:
           node-version: "10.15.3"
       - name: Fetch data version
         run: curl -sL https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits |grep -m1 "CN UPDATE" > version/data
-      - name: Check update by git
-        id: git-check
-        run: echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
       - name: npm install, build, and deploy
-        if: steps.git-check.outputs.modified == 'true'
+        if: ! git diff-index --quiet HEAD --
         run: |
           pip install requests
           python ./tools/extractMaterials.py
@@ -54,11 +51,8 @@ jobs:
           node-version: "10.15.3"
       - name: Fetch data version
         run: curl -sL https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits |grep -m1 "CN UPDATE" > version/data
-      - name: Check update by git
-        id: git-check
-        run: echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
       - name: npm install, build, and deploy
-        if: steps.git-check.outputs.modified == 'true'
+        if: ! git diff-index --quiet HEAD --
         run: |
           pip install requests
           python ./tools/extractMaterials.py
