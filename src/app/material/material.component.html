@@ -121,7 +121,7 @@
   <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="start start">
     <ng-container *ngFor="let item of items; trackBy:trackItem">
       <div fxFlex="50" fxFlex.gt-xs="33" fxFlex.gt-sm="25" fxFlex.gt-md="16" class="padding-025"
-        [hidden]="((options.filtered && !data[item.name].need && !data[item.name].lack)||(options.showOnly3plus && item.id.startsWith('30') && item.rarity<3)||(!options.showMat && item.id.startsWith('30'))||(!options.showBook && item.id.startsWith('33'))||(!options.showChip && item.id.startsWith('32')))">
+        [hidden]="((options.filtered && !data[item.name].need && !data[item.name].lack)||(options.showOnly3plus && item.id.startsWith('30') && item.rarity<3)||(!options.showMat && (item.id.startsWith('30') || item.id.startsWith('31')))||(!options.showBook && item.id.startsWith('33'))||(!options.showChip && item.id.startsWith('32')))">
         <app-material-card [item]="item" [itemdata]="data[item.name]" (dataChange)="onDataChange($event)"
           (reportMerge)="onMatMerge($event)"></app-material-card>
       </div>
