@@ -5,7 +5,7 @@
             选择仓库图片
         </button>
         <input #fileInput type="file" id="test-image-file" name="test"
-            accept="image/gif, image/jpeg, image/png, image/jpg" (input)="choiceImage($event)" style="display:none;">
+            accept="image/gif, image/jpeg, image/png, image/jpg" (change)="choiceImage($event)" style="display:none;">
         <button mdcButton raised dense [disabled]="!ImageLoaded || Lock" (click)="objectRegonition()">开始识别</button><br>
     </div>
     <div mdcCard fxLayout="row wrap">
