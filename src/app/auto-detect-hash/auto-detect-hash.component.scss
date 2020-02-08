@@ -40,8 +40,9 @@ select {
   }
 }
 
-[mdcButton] {
-
+[mdcButton]:not(.mdc-button--raised) {
+  color: var(--mdc-theme-on-surface);
+  
   &:hover, &:checked {
     color: var(--mdc-theme-on-primary);
     background-color: var(--mdc-theme-primary);
