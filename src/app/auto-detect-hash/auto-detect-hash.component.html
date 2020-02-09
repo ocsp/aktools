@@ -13,7 +13,7 @@
     </div>
     <div mdcCard fxLayout="row wrap">
         <div mdcCardActions fullBleed fxFlex="100">
-            <a mdcButton (click)="toMaterialCalc()">
+            <a mdcButton id="save-import" (click)="toMaterialCalc()">
                 保存并导入材料计算器 <i class="material-icons" aria-hidden="true">arrow_forward</i>
             </a>
         </div>
@@ -36,9 +36,9 @@
                     <ng-container *ngIf="ModifyingItem!==null">
                         <div mdcSelect style="width:80%;">
                             <select mdcSelectControl [(ngModel)]="ModifyBuffer.id" [disabled]='ModifyBuffer.delete'>
-                                <option *ngFor="let item of ModifyingItem.item; let i=index" [value]="item.id"
+                                <option *ngFor="let item of ItemNames | keyvalue; let i=index" [value]="item.key"
                                     ng-selected="i === 0">
-                                    {{ItemNames[item.id]}}</option>
+                                    {{item.value}}</option>
                             </select>
                             <label mdcFloatingLabel></label>
                         </div>
