@@ -1,25 +1,20 @@
 <div class="ad-containr" fxLayout="column">
 
     <div mdcCard class="card-title" fxLayout="row wrap" fxLayoutAlign="center center">
-        <button mdcButton raised dense type="button" (click)="Lock ? NotAgreeSecondDetect(): fileInput.click();">
+        <button mdcButton raised dense type="button" (click)="dialogImport.open()">
+            导入
+        </button>
+        <button mdcButton raised dense type="button" (click)="fileInput.click();">
             选择仓库图片
         </button>
+        <button mdcButton raised dense type="button" (click)="dialogExport.open()">
+            导出
+        </button>
         <input #fileInput type="file" id="test-image-file" name="test"
-            accept="image/gif, image/jpeg, image/png, image/jpg" (change)="choiceImage($event)" style="display:none;">
-        <button mdcButton raised dense [disabled]="!ImageLoaded || Lock" (click)="objectRegonition()">开始识别</button><br>
+            accept="image/gif, image/jpeg, image/png, image/jpg" (change)="choiceImage($event)"
+            style="display:none;"><br>
     </div>
-    <div mdcCard fxLayout="row wrap">
-        <div mdcCardActions fullBleed fxFlex="100">
-            <a mdcButton (click)="toMaterialCalc()">
-                保存并导入材料计算器 <i class="material-icons" aria-hidden="true">arrow_forward</i>
-            </a>
-        </div>
-    </div>
-    <div mdcCard>
-        <p style="text-align:center;margin:5px auto;">{{InfoText}}</p>
-    </div>
-    <div mdcLinearProgress [progressValue]="progress" bufferValue="1"></div>
-    <canvas style="margin:0 auto;" (click)="ModifyData(dialog,$event)">浏览器不支持Canvas 建议您换用最新版的Chrome/Firefox浏览器</canvas>
+    <canvas (click)="ChoiceItem($event,dialog)" style="margin:0 auto;">浏览器不支持Canvas 建议您换用最新版的Chrome/Firefox浏览器</canvas>
     <aside #dialog="mdcDialog" mdcDialog mdcFocusTrap>
         <div mdcDialogSurface>
             <header mdcDialogHeader>
@@ -40,37 +35,63 @@
                             <label mdcFloatingLabel></label>
                         </div>
                     </ng-container>
-                    <ng-container *ngIf="ModifyingItem!==null">
-                        <div mdcTextField dense class="input-field" style="width:80%;">
-                            <span>
-                                <button mdcButton dense [disabled]='ModifyBuffer.delete'
-                                    (click)="ModifyBuffer.have=ModifyBuffer.have-(ModifyBuffer.have>0?1:0)">
-                                    <i mdcButtonIcon class="material-icons">remove</i>
-                                </button>
-                            </span>
-                            <span style="width:100%;">
-                                <input mdcTextFieldInput type="number" [(ngModel)]="ModifyBuffer.have"
-                                    [disabled]='ModifyBuffer.delete'>
-                                <label mdcFloatingLabel class="mdc-floating-label--float-above">识别结果</label>
-                            </span>
-                            <span>
-                                <button mdcButton dense [disabled]='ModifyBuffer.delete'
-                                    (click)="ModifyBuffer.have=ModifyBuffer.have+1">
-                                    <i mdcButtonIcon class="material-icons">add</i>
-                                </button>
-                            </span>
-                        </div>
-                    </ng-container>
-                    <p *ngIf="ModifyingItem!==null&&ModifyBuffer.delete">该材料已被删除</p>
+                </div>
+
+                <div *ngIf="ModifyingItem!==null">
+                    <div>
+                        源hash:<span
+                            [ngStyle]="{'color': RecordItemHash[ModifyBuffer.id].hash[i]!=OriginHash[i]&&RecordItemHash[ModifyBuffer.id].hash[i]!=2 ? 'red' : 'green'}"
+                            style="font-family: Courier;"
+                            *ngFor="let item of RecordItemHash[ModifyBuffer.id].hash.slice(0,72); let i=index">{{item}}</span>
+                    </div>
+                    <div>
+                        现hash:<span
+                            [ngStyle]="{'color': RecordItemHash[ModifyBuffer.id].hash[i]!=OriginHash[i]&&RecordItemHash[ModifyBuffer.id].hash[i]!=2 ? 'red' : 'green'}"
+                            style="font-family: Courier;"
+                            *ngFor="let item of OriginHash.slice(0,72); let i=index">{{item}}</span>
+                    </div>
                 </div>
             </section>
             <footer mdcDialogFooter>
-                <button mdcButton *ngIf="ModifyingItem!==null"
-                    (click)="toggleItem()">{{ModifyBuffer.delete ? "恢复该材料" : "删除该材料"}}</button>
                 <button mdcButton mdcDialogCancel>取消</button>
-                <button mdcButton mdcDialogAccept (click)="AcceptModify()">确定</button>
+                <button mdcButton mdcDialogAccept (click)="Merge()">取均值合并</button>
+                <button mdcButton mdcDialogAccept (click)="Replace()">替换源Hash</button>
             </footer>
         </div>
         <div mdcDialogBackdrop></div>
     </aside>
+    <aside #dialogExport="mdcDialog" mdcDialog mdcFocusTrap>
+        <div mdcDialogSurface>
+            <header mdcDialogHeader>
+                <h2 mdcDialogHeaderTitle>导出数据</h2>
+            </header>
+            <section mdcDialogBody>
+                <div mdcTextField style="width:100%;height:200px;">
+                    <textarea #Input1 mdcTextFieldInput [value]="Data()" style="width:100%;height:200px;"></textarea>
+                </div>
+            </section>
+            <footer mdcDialogFooter>
+                <button mdcButton mdcDialogCancel>取消</button>
+                <button mdcButton mdcDialogAccept (click)="Copy(Input1)">复制</button>
+            </footer>
+        </div>
+        <div mdcDialogBackdrop></div>
+    </aside>
+    <aside #dialogImport="mdcDialog" mdcDialog mdcFocusTrap>
+    <div mdcDialogSurface>
+        <header mdcDialogHeader>
+            <h2 mdcDialogHeaderTitle>导入数据</h2>
+        </header>
+        <section mdcDialogBody>
+            <div mdcTextField style="width:100%;height:200px;">
+                <textarea #Input2 mdcTextFieldInput style="width:100%;height:200px;"></textarea>
+            </div>
+        </section>
+        <footer mdcDialogFooter>
+            <button mdcButton mdcDialogCancel>取消</button>
+            <button mdcButton mdcDialogAccept (click)="Import()">导入</button>
+        </footer>
+    </div>
+    <div mdcDialogBackdrop></div>
+</aside>
 </div>
