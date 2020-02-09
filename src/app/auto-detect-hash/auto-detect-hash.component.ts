@@ -705,6 +705,9 @@ export class AutoDetectHashComponent implements OnInit {
             this.Ctx.fillText(NumberString, Math.floor(this.XBound[x][0] + (width) / 2), Math.floor(this.YBound[y][0] + (height) / 2) + fontSize);
         }
     }
+    Route(){
+        this.router.navigateByUrl('/detect-setting');
+    }
     getSuitFontSize(text: string, width: number, height: number): number {
         if (!this.MaxFontSize) {
             if (this.FontSize === 0) {
