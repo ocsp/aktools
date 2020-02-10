@@ -8,8 +8,7 @@
             accept="image/gif, image/jpeg, image/png, image/jpg" (change)="choiceImage($event)" [disabled]="Lock"
             style="display:none;"><br>
         <button mdcButton raised dense [disabled]="!ImageLoaded || Lock" (click)="objectRegonition()">开始识别</button>
-        <a (click)="Route()"
-            style="cursor:pointer;float:right">&nbsp;&nbsp;&nbsp;<small>识别率低？设置属于自己的识别数据！</small></a>
+        <a (click)="Route()" style="cursor:pointer;float:right">&nbsp;&nbsp;&nbsp;<small>识别率低？设置属于自己的识别数据！</small></a>
     </div>
     <div mdcCard fxLayout="row wrap">
         <div mdcCardActions fullBleed fxFlex="100">
@@ -36,9 +35,9 @@
                     <ng-container *ngIf="ModifyingItem!==null">
                         <div mdcSelect style="width:80%;">
                             <select mdcSelectControl [(ngModel)]="ModifyBuffer.id" [disabled]='ModifyBuffer.delete'>
-                                <option *ngFor="let item of ItemNames | keyvalue; let i=index" [value]="item.key"
+                                <option *ngFor="let item of ModifyingItem.item; let i=index" [value]="item.id"
                                     ng-selected="i === 0">
-                                    {{item.value}}</option>
+                                    {{ItemNames[item.id]}}</option>
                             </select>
                             <label mdcFloatingLabel></label>
                         </div>

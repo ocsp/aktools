@@ -1,16 +1,16 @@
 /// <reference lib="webworker" />
 // tslint:disable: all
-let ItemHashList=[];
+let ItemHashList = [];
 let NumbersHashList: Array<any> = [
     {
         number: 5,
-        hash:[6,3,0,0,1,1,0,0,6,1,0,0,0,0,0,0,6,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,6,1,0,0,2,3,1,0,1,0,0,0,4,6,6,0,0,0,0,0,0,5,6,2,0,0,0,0,0,6,6,0,1,0,0,0,5,6,6,0,6,4,1,1,0,0,0,0],
-        count:6
+        hash: [6, 3, 0, 0, 1, 1, 0, 0, 6, 1, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 0, 2, 3, 1, 0, 1, 0, 0, 0, 4, 6, 6, 0, 0, 0, 0, 0, 0, 5, 6, 2, 0, 0, 0, 0, 0, 6, 6, 0, 1, 0, 0, 0, 5, 6, 6, 0, 6, 4, 1, 1, 0, 0, 0, 0],
+        count: 6
     },
     {
         number: 4,
-        hash:[0,0,0,11,13,5,0,0,0,0,11,13,5,0,0,0,0,3,13,8,0,0,0,0,3,12,13,1,10,10,0,0,13,11,0,0,13,13,0,0,13,2,0,0,12,13,0,0,1,0,0,3,6,2,0,0,0,0,1,3,13,13,0,0,0,0,0,0,12,13,0,0,0,0,0,0,12,13,0,0],
-        count:13
+        hash: [0, 0, 0, 11, 13, 5, 0, 0, 0, 0, 11, 13, 5, 0, 0, 0, 0, 3, 13, 8, 0, 0, 0, 0, 3, 12, 13, 1, 10, 10, 0, 0, 13, 11, 0, 0, 13, 13, 0, 0, 13, 2, 0, 0, 12, 13, 0, 0, 1, 0, 0, 3, 6, 2, 0, 0, 0, 0, 1, 3, 13, 13, 0, 0, 0, 0, 0, 0, 12, 13, 0, 0, 0, 0, 0, 0, 12, 13, 0, 0],
+        count: 13
     },
     {
         number: 0,
@@ -34,8 +34,8 @@ let NumbersHashList: Array<any> = [
     },
     {
         number: 6,
-        hash:[2,5,5,4,0,0,0,0,5,4,0,0,0,4,4,0,4,0,0,0,0,0,0,0,1,0,0,2,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,3,5,3,0,0,0,0,0,0,5,5,1,4,0,0,0,0,5,5,1,5,0,0,0,3,5,4,0,5,5,5,2,1,1,0,0],
-        count:5
+        hash: [2, 5, 5, 4, 0, 0, 0, 0, 5, 4, 0, 0, 0, 4, 4, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 5, 3, 0, 0, 0, 0, 0, 0, 5, 5, 1, 4, 0, 0, 0, 0, 5, 5, 1, 5, 0, 0, 0, 3, 5, 4, 0, 5, 5, 5, 2, 1, 1, 0, 0],
+        count: 5
     },
     {
         number: 7,
@@ -44,8 +44,8 @@ let NumbersHashList: Array<any> = [
     },
     {
         number: 8,
-        hash:[5,6,6,1,0,0,0,0,6,3,0,0,4,6,3,0,5,0,0,0,0,6,5,0,6,3,0,0,2,6,4,0,6,6,3,0,1,1,0,0,6,5,0,0,6,2,0,0,4,0,0,0,3,6,6,1,0,0,0,0,0,5,6,2,3,0,0,0,2,6,6,1,6,6,4,0,1,0,0,0],
-        count:6
+        hash: [5, 6, 6, 1, 0, 0, 0, 0, 6, 3, 0, 0, 4, 6, 3, 0, 5, 0, 0, 0, 0, 6, 5, 0, 6, 3, 0, 0, 2, 6, 4, 0, 6, 6, 3, 0, 1, 1, 0, 0, 6, 5, 0, 0, 6, 2, 0, 0, 4, 0, 0, 0, 3, 6, 6, 1, 0, 0, 0, 0, 0, 5, 6, 2, 3, 0, 0, 0, 2, 6, 6, 1, 6, 6, 4, 0, 1, 0, 0, 0],
+        count: 6
     },
     {
         number: 9,
@@ -79,7 +79,7 @@ let XBound = [[]];
 let YBound = [[]];
 let HashList = [];
 let NumberHashList = [];
-let OriginHashList=[];
+let OriginHashList = [];
 function fillPixelData(ImageData) {
     for (let index = 0; index < ImageData.data.length; index += 4) {
         const r = ImageData.data[index], g = ImageData.data[index + 1], b = ImageData.data[index + 2];
@@ -122,6 +122,15 @@ function analyzeBound() {
         if (XBound[x][1] - XBound[x][0] < 50) {
             XBound.splice(x, 1)
             x--;
+        } else {
+            let NearWidth = [
+                x == 0 ? 0 : XBound[x - 1][1] - XBound[x - 1][0],
+                x == XBound.length - 1 ? 0 : XBound[x + 1][1] - XBound[x + 1][0]
+            ].filter(n => n != 0);
+            let mw = Math.round(NearWidth.reduce((a, b) => a + b) / NearWidth.length);
+            if (Math.abs((XBound[x][1] - XBound[x][0]) - mw) > 20) {
+                XBound[x][1] = XBound[x][0] + Math.max(...NearWidth);
+            }
         }
     }
     for (let y = 0, WhiteSpace = 0, LastBlank = 0; y < YPoint.length; y++) {
@@ -154,7 +163,7 @@ function analyzeBound() {
 addEventListener('message', (message) => {
     switch (message.data.method) {
         case "LoadHashData":
-            ItemHashList=message.data.Data;
+            ItemHashList = message.data.Data;
             for (let hash of ItemHashList) {
                 if (hash.hash instanceof Array) {
                     hash.hash = hash.hash.map(v => v / hash.count).map(v => (v == 0.5 ? 2 : ((v < 0.5) ? 0 : 1))).join('')
@@ -168,7 +177,7 @@ addEventListener('message', (message) => {
             XBound = [[]];
             YBound = [[]];
             HashList = [];
-            NumberHashList=[]
+            NumberHashList = []
             fillPixelData(message.data.data);
             postMessage({ method: "status", text: "分析图像边界", progress: 0.2 });
             analyzeBound();
@@ -188,10 +197,10 @@ addEventListener('message', (message) => {
                 }
                 return HashString
             });
-            OriginHashList=[...HashList];
+            OriginHashList = [...HashList];
             postMessage({ method: "status", text: "正在判断图像对应的物品", progress: 0.45 });
             HashList = HashList.map((hash: String) => {
-                const ConfidenceFilter=ItemHashList.map((hashs) => {
+                const ConfidenceFilter = ItemHashList.map((hashs) => {
                     let Confidence = 0;
                     let AllLength = 144;
                     for (let i = 0; i < hash.length; i++) {
@@ -204,12 +213,12 @@ addEventListener('message', (message) => {
                 }).sort((a, b) => {
                     return b.confidence - a.confidence
                 })
-                if(ConfidenceFilter[0].confidence<=0.75){
+                if (ConfidenceFilter[0].confidence <= 0.75) {
                     ConfidenceFilter.unshift({
-                        id:"0000",
-                        hash:"",
-                        count:0,
-                        confidence:1
+                        id: "0000",
+                        hash: "",
+                        count: 0,
+                        confidence: 1
                     });
                 }
                 return ConfidenceFilter;
@@ -252,9 +261,9 @@ addEventListener('message', (message) => {
                 }).join(""))
             })
             postMessage({ method: "status", text: "识别完成，点击下方物品可以进行修改。", progress: 1 });
-            postMessage({ method: "DetectResult", NumberResult:Numbers,Items:HashList });
+            postMessage({ method: "DetectResult", NumberResult: Numbers, Items: HashList });
             break;
         case "getItemHashs":
-            postMessage({ method: "SingleItemHash",Item:HashList[message.data.index],OriginHash:OriginHashList[message.data.index]});
+            postMessage({ method: "SingleItemHash", Item: HashList[message.data.index], OriginHash: OriginHashList[message.data.index] });
     }
 });

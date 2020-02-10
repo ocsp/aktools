@@ -34,17 +34,19 @@ export class DetectSetttingComponent implements OnInit {
     ItemHashList: any = [];
     RecordItemHash = {};
     OriginHash = [];
+    ImageDatas: any[];
     constructor(private fetchService: FetchService, private snackbar: MdcSnackbarService, private router: Router, private el: ElementRef) {
     }
 
     async ngOnInit() {
         this.fetchService.getJson('./assets/data/material.json').subscribe(data => {
-            this.ItemNames = {"0000": "该位置无物品"};
-            for(const i in data){
-                if(data[i]){
-                    this.ItemNames[data[i].id]=data[i].name;
+            this.ItemNames = { "0000": "该位置无物品" };
+            for (const i in data) {
+                if (data[i]) {
+                    this.ItemNames[data[i].id] = data[i].name;
                 }
             }
+            this.registerWorker();
         });
         this.ImageElement = document.createElement('img');
         this.Canvas = this.el.nativeElement.getElementsByTagName('canvas')[0];
@@ -52,7 +54,6 @@ export class DetectSetttingComponent implements OnInit {
         this.MaxFontSize = this.fetchService.getLocalStorage('detect-mfs', true);
         this.textColor = this.fetchService.getLocalStorage('detect-tclr', '#00ff00');
         this.onPasteImage();
-        this.registerWorker();
     }
     Copy(input) {
         input.select();
@@ -65,10 +66,10 @@ export class DetectSetttingComponent implements OnInit {
             });
         }
     }
-    Import(input){
+    Import(input) {
         localStorage.setItem("detect-setting", input.value);
         this.ItemHashList = JSON.parse(localStorage.getItem("detect-setting")) || (Boolean(localStorage.setItem("detect-setting", JSON.stringify(this.ItemHashList))) || this.ItemHashList);
-        this.reset();
+        this.ImageDatas.length == 0 ? this.resetAll() : this.EditGuiReset();
         this.snackbar.show({
             message: '导入成功',
             actionText: '好的',
@@ -104,7 +105,8 @@ export class DetectSetttingComponent implements OnInit {
             this.ImageLoaded = true;
             this.Canvas.width = this.ImageElement.width;
             this.Canvas.height = this.ImageElement.height;
-            this.reset();
+            this.Ctx.drawImage(this.ImageElement, 0, 0);
+            this.resetAll();
             this.objectRegonition()
         };
         this.ImageElement.src = src;
@@ -136,12 +138,15 @@ export class DetectSetttingComponent implements OnInit {
         this.worker = new Worker('../auto-detect-hash/detect.worker', { type: 'module' });
         this.worker.onmessage = this.MessageDeal.bind(this);
         this.ItemHashList = JSON.parse(localStorage.getItem("detect-setting")) || (Boolean(localStorage.setItem("detect-setting", JSON.stringify(this.ItemHashList))) || this.ItemHashList);
-        this.reset();
+        this.resetAll();
     }
-    reset() {
+    resetAll() {
         this.XBound = [];
         this.YBound = [];
         this.ItemImages = [];
+        this.EditGuiReset()
+    }
+    EditGuiReset() {
         this.ItemImage = "";
         this.NumberImages = [];
         this.FontSize = 0;
@@ -152,7 +157,7 @@ export class DetectSetttingComponent implements OnInit {
         this.Lock = false;
         this.RecordItemHash = {};
         this.OriginHash = [];
-        this.Ctx.drawImage(this.ImageElement, 0, 0);
+        this.ItemHashList = this.ItemHashList.filter(v => v.id in this.ItemNames);
         this.worker.postMessage({ method: "LoadHashData", Data: this.ItemHashList });
         for (let item of this.ItemHashList) {
             this.RecordItemHash[item.id] = {
@@ -161,7 +166,7 @@ export class DetectSetttingComponent implements OnInit {
             }
         }
         for (const id in this.ItemNames) {
-            if(this.ItemNames[id]){
+            if (this.ItemNames[id]) {
                 if (!(id in this.RecordItemHash)) {
                     this.RecordItemHash[id] = {
                         id: id,
@@ -184,7 +189,7 @@ export class DetectSetttingComponent implements OnInit {
             case 'clipImage':
                 this.XBound = message.data.XBound;
                 this.YBound = message.data.YBound;
-                const ImageDatas = [];
+                this.ImageDatas = [];
                 for (let y = 0; y < this.YBound.length; y++) {
                     for (let x = 0; x < this.XBound.length; x++) {
                         const Canvas = document.createElement('canvas');
@@ -198,11 +203,11 @@ export class DetectSetttingComponent implements OnInit {
                         DhashCanvas.height = 12;
                         const DhashCtx = DhashCanvas.getContext('2d');
                         DhashCtx.drawImage(Canvas, 0, 0, Canvas.width, Canvas.height, 0, 0, DhashCanvas.width, DhashCanvas.height);
-                        ImageDatas.push(DhashCtx.getImageData(0, 0, DhashCanvas.width, DhashCanvas.height));
+                        this.ImageDatas.push(DhashCtx.getImageData(0, 0, DhashCanvas.width, DhashCanvas.height));
                         this.Ctx.strokeRect(this.XBound[x][0], this.YBound[y][0], Canvas.width, Canvas.height);
                     }
                 }
-                this.worker.postMessage({ method: 'calcDhash', ImageDatas });
+                this.worker.postMessage({ method: 'calcDhash', ImageDatas: this.ImageDatas });
                 break;
             case "SingleItemHash":
                 this.detectedItem = message.data.Item;
@@ -237,16 +242,16 @@ export class DetectSetttingComponent implements OnInit {
         NewHashList.id = this.ItemHashList[HashList].id;
         this.ItemHashList[HashList] = NewHashList;
         localStorage.setItem("detect-setting", JSON.stringify(this.ItemHashList));
-        this.reset();
-        this.objectRegonition();
+        this.EditGuiReset();
+        this.worker.postMessage({ method: 'calcDhash', ImageDatas: this.ImageDatas }); //重算dHash
     }
     Replace() {
         let HashList = this.ItemHashList.find(a => a.id == this.ModifyBuffer.id);
         HashList.count = 1;
         HashList.hash = this.OriginHash;
         localStorage.setItem("detect-setting", JSON.stringify(this.ItemHashList));
-        this.reset();
-        this.objectRegonition();
+        this.EditGuiReset();
+        this.worker.postMessage({ method: 'calcDhash', ImageDatas: this.ImageDatas }); //重算dHash
     }
     ChoiceItem(e: MouseEvent, dialog: MdcDialogDirective) {
         const rect = this.Canvas.getBoundingClientRect();
