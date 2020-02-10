@@ -118,18 +118,18 @@ function analyzeBound() {
     } else {
         XBound.pop();
     }
+    let MaxWidthinLine = [];
+    for (let x = 0; x < XBound.length; x++) {
+        MaxWidthinLine.push(XBound[x][1] - XBound[x][0]);
+    }
+    let mw = Math.round(MaxWidthinLine.reduce((a, b) => a + b) / MaxWidthinLine.length);
     for (let x = 0; x < XBound.length; x++) {
         if (XBound[x][1] - XBound[x][0] < 50) {
             XBound.splice(x, 1)
             x--;
         } else {
-            let NearWidth = [
-                x == 0 ? 0 : XBound[x - 1][1] - XBound[x - 1][0],
-                x == XBound.length - 1 ? 0 : XBound[x + 1][1] - XBound[x + 1][0]
-            ].filter(n => n != 0);
-            let mw = Math.round(NearWidth.reduce((a, b) => a + b) / NearWidth.length);
             if (Math.abs((XBound[x][1] - XBound[x][0]) - mw) > 20) {
-                XBound[x][1] = XBound[x][0] + Math.max(...NearWidth);
+                XBound[x][1] = XBound[x][0] + Math.max(...MaxWidthinLine);
             }
         }
     }

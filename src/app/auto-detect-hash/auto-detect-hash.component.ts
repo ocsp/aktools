@@ -393,7 +393,7 @@ export class AutoDetectHashComponent implements OnInit {
         this.worker = new Worker('./detect.worker', { type: 'module' });
         this.worker.onmessage = this.MessageDeal.bind(this);
         this.ItemHashList = JSON.parse(localStorage.getItem("detect-setting")) || (Boolean(localStorage.setItem("detect-setting", JSON.stringify(this.ItemHashList))) || this.ItemHashList);
-        this.ItemHashList.filter(v => v in this.ItemNames);
+        this.ItemHashList = this.ItemHashList.filter(v => v.id in this.ItemNames);
         this.worker.postMessage({ method: "LoadHashData", Data: this.ItemHashList });
     }
     objectRegonition() {
