@@ -237,7 +237,17 @@ export class DetectSetttingComponent implements OnInit {
         }
     }
     Merge() {
+        if (this.ModifyBuffer.id.toString() == "0000") {
+            return;
+        }
         let HashList = this.ItemHashList.findIndex(a => a.id == this.ModifyBuffer.id);
+        if (HashList === -1) {
+            HashList = this.ItemHashList.push({
+                id: this.ModifyBuffer.id,
+                hash: new Array(144).fill(0),
+                count: 0
+            }) - 1;
+        }
         let NewHashList = this.mergeHash(this.ItemHashList[HashList], this.OriginHash.join(''))
         NewHashList.id = this.ItemHashList[HashList].id;
         this.ItemHashList[HashList] = NewHashList;
@@ -246,7 +256,17 @@ export class DetectSetttingComponent implements OnInit {
         this.worker.postMessage({ method: 'calcDhash', ImageDatas: this.ImageDatas }); //重算dHash
     }
     Replace() {
+        if (this.ModifyBuffer.id.toString() == "0000") {
+            return;
+        }
         let HashList = this.ItemHashList.find(a => a.id == this.ModifyBuffer.id);
+        if (!HashList) {
+            HashList = this.ItemHashList[this.ItemHashList.push({
+                id: this.ModifyBuffer.id,
+                hash: new Array(144).fill(0),
+                count: 0
+            }) - 1];
+        }
         HashList.count = 1;
         HashList.hash = this.OriginHash;
         localStorage.setItem("detect-setting", JSON.stringify(this.ItemHashList));
