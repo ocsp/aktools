@@ -13,7 +13,6 @@ export class AutoDetectHashComponent implements OnInit {
     ImageLoaded: boolean;
     Canvas: HTMLCanvasElement;
     Ctx: CanvasRenderingContext2D;
-    ImageData: ImageData;
     worker: Worker; // WebWorker
     InfoText = '等待处理';
     progress: 0;
@@ -39,11 +38,21 @@ export class AutoDetectHashComponent implements OnInit {
         this.fetchService.getJson('./assets/data/detectdata.json').subscribe(Hashdata => {
             this.ItemHashList = [...Hashdata];
             this.fetchService.getJson('./assets/data/material.json').subscribe(data => {
+                const idata = this.fetchService.getLocalStorage('m-data', {});
+                const initIdata = Object.keys(idata).length === 0;
                 this.ItemNames = { '0000': '该位置无物品' };
                 for (const i in data) {
+                    if(initIdata){
+                        idata[data[i].name] = {
+                            have: 0, need: 0, lack: 0, canMerge: false, name: data[i].name
+                        }
+                    }
                     if (data[i]) {
                         this.ItemNames[data[i].id] = data[i].name;
                     }
+                }
+                if(initIdata){
+                    this.fetchService.setLocalStorage('m-data',idata);
                 }
                 this.registerWorker();
             });
@@ -144,14 +153,6 @@ export class AutoDetectHashComponent implements OnInit {
             }
         });
     }
-    NotAllowSecondDetect() {
-        this.snackbar.show({
-            message: '请先导入材料计算在进行下一次识别(因为开发者懒得重置变量)。',
-            actionText: '好的',
-            multiline: false,
-            actionOnBottom: false
-        });
-    }
     async toMaterialCalc() {
         if (!this.detectedItemList || this.detectedItemList.length === 0) {
             this.snackbar.show({
@@ -163,15 +164,6 @@ export class AutoDetectHashComponent implements OnInit {
             return;
         }
         const data = this.fetchService.getLocalStorage('m-data', {});
-        if (Object.keys(data).length === 0) {
-            this.snackbar.show({
-                message: '请先打开一次材料计算页面。',
-                actionText: '好的',
-                multiline: false,
-                actionOnBottom: false
-            });
-            return;
-        }
         for (let y = 0, Yall = this.detectedItemList.length; y < Yall; y++) {
             for (let x = 0, Xall = this.detectedItemList[y].length; x < Xall; x++) {
                 if (this.ItemNames[this.detectedItemList[y][x].id] in data && !isNaN(this.detectedItemList[y][x].have) && this.detectedItemList[y][x].have !== 0 && !this.detectedItemList[y][x].delete) {
@@ -180,9 +172,15 @@ export class AutoDetectHashComponent implements OnInit {
             }
         }
         this.fetchService.setLocalStorage('m-data', data);
-        this.router.navigateByUrl('/material');
+        this.snackbar.show({
+            message: '导入成功',
+            actionText: '好的',
+            multiline: false,
+            actionOnBottom: false
+        });
     }
     LoadImage(src: string) {
+        this.reset();
         this.ImageElement.onload = e => {
             this.ImageLoaded = true;
             this.Canvas.width = this.ImageElement.width;
@@ -190,6 +188,20 @@ export class AutoDetectHashComponent implements OnInit {
             this.Ctx.drawImage(this.ImageElement, 0, 0);
         };
         this.ImageElement.src = src;
+    }
+    reset(){
+        this.InfoText = '等待处理';
+        this.progress=0;
+        this.XBound = []; // X轴与Y轴方向上的物品边界
+        this.YBound = [];
+        this.ItemImages = []; // 每个物品的图像
+        this.NumberImages = []; // 数字的图像
+        this.ModifyingItem = null;
+        this.ModifyBuffer = { have: 0, delete: false };
+        this.Modifying = { x: 0, y: 0 };
+        this.detectedItemList = [];
+        this.ItemHashList = [];
+        this.Lock = false;
     }
     registerWorker() {
         this.worker = new Worker('./detect.worker', { type: 'module' });
