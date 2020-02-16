@@ -157,7 +157,7 @@ export class DetectSetttingComponent implements OnInit {
         this.Lock = false;
         this.RecordItemHash = {};
         this.OriginHash = [];
-        this.ItemHashList = this.ItemHashList.filter(v => v.id in this.ItemNames);
+        this.ItemHashList = this.ItemHashList;
         this.worker.postMessage({ method: "LoadHashData", Data: this.ItemHashList });
         for (let item of this.ItemHashList) {
             this.RecordItemHash[item.id] = {

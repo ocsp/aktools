@@ -42,7 +42,7 @@ export class AutoDetectHashComponent implements OnInit {
                 const initIdata = Object.keys(idata).length === 0;
                 this.ItemNames = { '0000': '该位置无物品' };
                 for (const i in data) {
-                    if(initIdata){
+                    if (initIdata) {
                         idata[data[i].name] = {
                             have: 0, need: 0, lack: 0, canMerge: false, name: data[i].name
                         }
@@ -51,8 +51,8 @@ export class AutoDetectHashComponent implements OnInit {
                         this.ItemNames[data[i].id] = data[i].name;
                     }
                 }
-                if(initIdata){
-                    this.fetchService.setLocalStorage('m-data',idata);
+                if (initIdata) {
+                    this.fetchService.setLocalStorage('m-data', idata);
                 }
                 this.registerWorker();
             });
@@ -189,9 +189,9 @@ export class AutoDetectHashComponent implements OnInit {
         };
         this.ImageElement.src = src;
     }
-    reset(){
+    reset() {
         this.InfoText = '等待处理';
-        this.progress=0;
+        this.progress = 0;
         this.XBound = []; // X轴与Y轴方向上的物品边界
         this.YBound = [];
         this.ItemImages = []; // 每个物品的图像
@@ -206,8 +206,21 @@ export class AutoDetectHashComponent implements OnInit {
     registerWorker() {
         this.worker = new Worker('./detect.worker', { type: 'module' });
         this.worker.onmessage = this.MessageDeal.bind(this);
-        this.ItemHashList = JSON.parse(localStorage.getItem('detect-setting')) || (Boolean(localStorage.setItem('detect-setting', JSON.stringify(this.ItemHashList))) || this.ItemHashList);
-        this.ItemHashList = this.ItemHashList.filter(v => v.id in this.ItemNames);
+        let ItemHashList = JSON.parse(localStorage.getItem('detect-setting')) || (Boolean(localStorage.setItem('detect-setting', JSON.stringify(this.ItemHashList))) || this.ItemHashList);
+        if (ItemHashList !== this.ItemHashList) {
+            const sl = ItemHashList.length;
+            for (let i = 0; i < this.ItemHashList.length; i++) {
+                if (!ItemHashList.some(v => {
+                    return v.id == this.ItemHashList[i].id
+                })) {
+                    ItemHashList.push(this.ItemHashList[i])
+                }
+            }
+            if (sl != ItemHashList.length) {
+                this.ItemHashList = ItemHashList;
+                localStorage.setItem('detect-setting', JSON.stringify(this.ItemHashList));
+            }
+        }
         this.worker.postMessage({ method: 'LoadHashData', Data: this.ItemHashList });
     }
     objectRegonition() {
@@ -421,7 +434,8 @@ export class AutoDetectHashComponent implements OnInit {
                             id: message.data.Items[y * this.XBound.length + x][0].id,
                             name: this.ItemNames[message.data.Items[y * this.XBound.length + x][0].id],
                             have: message.data.NumberResult[y * this.XBound.length + x],
-                            item: message.data.Items[y * this.XBound.length + x]
+                            item: message.data.Items[y * this.XBound.length + x],
+                            delete: !(message.data.Items[y * this.XBound.length + x][0].id in this.ItemNames)
                         };
                     }
                 }
@@ -436,7 +450,7 @@ export class AutoDetectHashComponent implements OnInit {
         if (pos.length === 0) {
             for (let y = 0, Yall = this.detectedItemList.length; y < Yall; y++) {
                 for (let x = 0, Xall = this.detectedItemList[y].length; x < Xall; x++) {
-                    if (this.detectedItemList[y][x].id == '0000') { continue; }
+                    if (this.detectedItemList[y][x].id == '0000' || !(this.detectedItemList[y][x].id in this.ItemNames)) { continue; }
                     const width = this.XBound[x][1] - this.XBound[x][0];
                     const height = this.YBound[y][1] - this.YBound[y][0];
                     const NumberString = this.detectedItemList[y][x].have.toString();
@@ -449,7 +463,7 @@ export class AutoDetectHashComponent implements OnInit {
         } else {
             const x = pos[0];
             const y = pos[1];
-            if (this.detectedItemList[y][x].id == '0000') { return void 0; }
+            if (this.detectedItemList[y][x].id == '0000' || !(this.detectedItemList[y][x].id in this.ItemNames)) { return void 0; }
             const width = this.XBound[x][1] - this.XBound[x][0];
             const height = this.YBound[y][1] - this.YBound[y][0];
             const NumberString = this.detectedItemList[y][x].have.toString();
