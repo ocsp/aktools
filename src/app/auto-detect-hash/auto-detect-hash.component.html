@@ -37,7 +37,7 @@
                             <select mdcSelectControl [(ngModel)]="ModifyBuffer.id" [disabled]='ModifyBuffer.delete'>
                                 <option *ngFor="let item of ModifyingItem.item; let i=index" [value]="item.id"
                                     ng-selected="i === 0">
-                                    {{ItemNames[item.id]}}</option>
+                                    {{ItemNames[item.id] || item.name}}</option>
                             </select>
                             <label mdcFloatingLabel></label>
                         </div>
@@ -63,7 +63,8 @@
                             </span>
                         </div>
                     </ng-container>
-                    <p *ngIf="ModifyingItem!==null&&ModifyBuffer.delete">该材料已被删除</p>
+                    <p *ngIf="ModifyingItem!==null&&ModifyBuffer.delete">
+                        {{ItemNames.hasOwnProperty(ModifyBuffer.id) ? "该材料已被删除" : "该材料不计入材料计算"}}</p>
                 </div>
             </section>
             <footer mdcDialogFooter>

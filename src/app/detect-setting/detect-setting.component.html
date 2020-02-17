@@ -30,7 +30,7 @@
                             <select mdcSelectControl [(ngModel)]="ModifyBuffer.id">
                                 <option *ngFor="let item of ModifyingItem.item; let i=index" [value]="item.id"
                                     ng-selected="i === 0">
-                                    {{ItemNames[item.id]}}</option>
+                                    {{ItemNames[item.id] || item.name}}</option>
                             </select>
                             <label mdcFloatingLabel></label>
                         </div>
