@@ -164,7 +164,7 @@ function analyzeBound() {
         YBound.pop();
     }
     for (let y = 0; y < YBound.length; y++) {
-        if (YBound[y][0] == YBound[y][1]) {
+        if (YBound[y][1] - YBound[y][0] < 50) {
             YBound.splice(y, 1)
             y--;
         }
