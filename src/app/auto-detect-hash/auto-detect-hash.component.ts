@@ -434,7 +434,7 @@ export class AutoDetectHashComponent implements OnInit {
                             id: message.data.Items[y * this.XBound.length + x][0].id,
                             name: this.ItemNames[message.data.Items[y * this.XBound.length + x][0].id],
                             have: message.data.NumberResult[y * this.XBound.length + x],
-                            item: message.data.Items[y * this.XBound.length + x],
+                            item: message.data.Items[y * this.XBound.length + x].filter(a => a.id in this.ItemNames),
                             delete: !(message.data.Items[y * this.XBound.length + x][0].id in this.ItemNames)
                         };
                     }
