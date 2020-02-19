@@ -1,7 +1,7 @@
 # Publish to Github pages
 # Get your token from https://github.com/settings/tokens
-NAME="GithubUserName"
-EMAIL=E-mail
+NAME=GithubUserName
+EMAIL=YourEMail
 TOKEN=AAAAAAAAAAAAAAAAAAAAAAAA
 CNAME=aktools.graueneko.xyz
 REPO=github.com/graueneko/aktools.git
@@ -12,8 +12,8 @@ ng build --prod --base-href "https://$CNAME/" && npx angular-cli-ghpages --dir=d
 
 # Publish to Tencent Pages
 # Get your token from https://dev.tencent.com/user/account/setting/tokens
-NAME="GithubUserName"
-EMAIL=E-mail
+NAME=CodingUserName
+EMAIL=YourEMail
 TOKEN=AAAAAAAAAAAAAAAAAAAAAAAA
 CNAME=aktoolscn.graueneko.xyz
 REPO=git.dev.tencent.com/graueneko/aktools.git
