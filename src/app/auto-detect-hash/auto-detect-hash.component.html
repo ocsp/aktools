@@ -1,5 +1,4 @@
 <div class="ad-containr" fxLayout="column">
-
     <div mdcCard class="card-title" fxLayout="row wrap" fxLayoutAlign="center center">
         <button mdcButton raised dense type="button" (click)="fileInput.click();">
             选择仓库图片
@@ -21,7 +20,9 @@
         <p style="text-align:center;margin:5px auto;">{{InfoText}}</p>
     </div>
     <div mdcLinearProgress [progressValue]="progress" bufferValue="1"></div>
-    <canvas style="margin:0 auto;" (click)="ModifyData(dialog,$event)">浏览器不支持Canvas 建议您换用最新版的Chrome/Firefox浏览器</canvas>
+    <div id="canvas-box">
+        <canvas ngClass.lt-sm="lt-sm" (click)="ModifyData(dialog,$event)">浏览器不支持Canvas 建议您换用最新版的Chrome/Firefox浏览器</canvas>
+    </div>
     <aside #dialog="mdcDialog" mdcDialog mdcFocusTrap>
         <div mdcDialogSurface>
             <header mdcDialogHeader>

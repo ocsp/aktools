@@ -64,8 +64,14 @@ select {
   margin:0 auto 10px auto;
 }
 canvas {
-  width:100%;
-  max-width:  1200px;
+  max-width: 1200px;
+  margin: auto;
+}
+canvas:not(.lt-sm){
+  width: 100%;
+}
+canvas.lt-sm {
+  max-height: 500px;
 }
 
 p, input, select {
@@ -74,4 +80,10 @@ p, input, select {
 
 .select {
   border:blue 2px solid;
+}
+
+#canvas-box {
+  max-width: 100%;
+  overflow-x: auto;
+  text-align: center;
 }
