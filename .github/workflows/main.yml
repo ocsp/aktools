@@ -20,7 +20,7 @@ jobs:
           npm i -s
           npm install -g @angular/cli
       - name: Build & deploy gh-pages
-        run: 
+        run: |
           ng build --prod --base-href "https://$CNAME/"
           npx angular-cli-ghpages --dir=dist/$PROJECT --repo=https://$TOKEN@$REPO --no-silent --cname=$CNAME --email=$EMAIL --name="graueneko"
         env:
