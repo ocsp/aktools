@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/aktools",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -31,13 +32,13 @@
             "styles": [
               "src/styles.scss",
               {
+                "inject": false,
                 "input": "src/app/styles/themes/dark.scss",
-                "lazy": true,
                 "bundleName": "dark"
               },
               {
+                "inject": false,
                 "input": "src/app/styles/themes/light.scss",
-                "lazy": true,
                 "bundleName": "light"
               }
             ],
@@ -71,6 +72,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ],
               "serviceWorker": true,
@@ -142,5 +147,8 @@
       }
     }
   },
-  "defaultProject": "aktools"
+  "defaultProject": "aktools",
+  "cli": {
+    "analytics": "12b3bcc6-f809-45fc-8f0c-996d9f563e1d"
+  }
 }
