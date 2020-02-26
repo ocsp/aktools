@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1582631015609,
+  "timestamp": 1582704498435,
   "index": "https://aktools.graueneko.xyz/index.html",
   "assetGroups": [
     {
@@ -8,19 +8,22 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "https://aktools.graueneko.xyz/0-es2015.4d226625ccfb7328e3b6.worker.js",
-        "https://aktools.graueneko.xyz/1-es2015.b10b780e05627ba2ed8e.worker.js",
+        "https://aktools.graueneko.xyz/0-es2015.c091a4d20992196ac941.worker.js",
+        "https://aktools.graueneko.xyz/0-es5.c091a4d20992196ac941.worker.js",
+        "https://aktools.graueneko.xyz/1-es2015.4f55ad9015c09977bcda.worker.js",
+        "https://aktools.graueneko.xyz/1-es5.4f55ad9015c09977bcda.worker.js",
         "https://aktools.graueneko.xyz/dark.css",
         "https://aktools.graueneko.xyz/favicon.ico",
         "https://aktools.graueneko.xyz/index.html",
         "https://aktools.graueneko.xyz/light.css",
-        "https://aktools.graueneko.xyz/main-es2015.767a5d407b3301c3e7aa.js",
-        "https://aktools.graueneko.xyz/main-es5.767a5d407b3301c3e7aa.js",
-        "https://aktools.graueneko.xyz/polyfills-es2015.b00a8ee45d22faafa706.js",
-        "https://aktools.graueneko.xyz/polyfills-es5.8de5fca6e8c20518eff8.js",
-        "https://aktools.graueneko.xyz/runtime-es2015.edb2fcf2778e7bf1d426.js",
-        "https://aktools.graueneko.xyz/runtime-es5.edb2fcf2778e7bf1d426.js",
-        "https://aktools.graueneko.xyz/styles.8967054a99a191ccb0dc.css"
+        "https://aktools.graueneko.xyz/main-es2015.89fc191e6b0bb5c67091.js",
+        "https://aktools.graueneko.xyz/main-es5.89fc191e6b0bb5c67091.js",
+        "https://aktools.graueneko.xyz/manifest.webmanifest",
+        "https://aktools.graueneko.xyz/polyfills-es2015.254317a954cfa641d528.js",
+        "https://aktools.graueneko.xyz/polyfills-es5.c26a2fde5223ba618a95.js",
+        "https://aktools.graueneko.xyz/runtime-es2015.44f7a62596b3847c435b.js",
+        "https://aktools.graueneko.xyz/runtime-es5.44f7a62596b3847c435b.js",
+        "https://aktools.graueneko.xyz/styles.e5bba7d6100189ce2924.css"
       ],
       "patterns": []
     },
@@ -227,8 +230,10 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://aktools.graueneko.xyz/0-es2015.4d226625ccfb7328e3b6.worker.js": "0ba0d1d5a57737c23448686fa31c0ef7e06c5358",
-    "https://aktools.graueneko.xyz/1-es2015.b10b780e05627ba2ed8e.worker.js": "0ba0d1d5a57737c23448686fa31c0ef7e06c5358",
+    "https://aktools.graueneko.xyz/0-es2015.c091a4d20992196ac941.worker.js": "0ef03d0add331c286e1d5c52b54704ae2f21dce8",
+    "https://aktools.graueneko.xyz/0-es5.c091a4d20992196ac941.worker.js": "56c754aad9091bebd174e12a433b01ee30656a9c",
+    "https://aktools.graueneko.xyz/1-es2015.4f55ad9015c09977bcda.worker.js": "0ef03d0add331c286e1d5c52b54704ae2f21dce8",
+    "https://aktools.graueneko.xyz/1-es5.4f55ad9015c09977bcda.worker.js": "56c754aad9091bebd174e12a433b01ee30656a9c",
     "https://aktools.graueneko.xyz/assets/data/akhr.json": "efdce1b02dd9d8b40920e4a436edb2f41bf38faa",
     "https://aktools.graueneko.xyz/assets/data/aklevel.json": "1a2277806ee936551b7609386e69e48ffcf49c86",
     "https://aktools.graueneko.xyz/assets/data/akmaterial.json": "dd7347d78f93d708cd58a20a1fc06525fdccca08",
@@ -421,17 +426,18 @@
     "https://aktools.graueneko.xyz/assets/img/material/sprite_exp_card_t2.png": "85d29f2efe11e22832fc9c00a33c727362fbe65e",
     "https://aktools.graueneko.xyz/assets/img/material/sprite_exp_card_t3.png": "6c51eb54b064bff654357b4cc6bb0b223d0b889c",
     "https://aktools.graueneko.xyz/assets/img/material/sprite_exp_card_t4.png": "0ed2d6dad7658e24f2d333d7e10f1733b844183d",
-    "https://aktools.graueneko.xyz/dark.css": "c29cee5b7cc983ffdb610f5dd7f74f97f0e6fafc",
+    "https://aktools.graueneko.xyz/dark.css": "e41008036abd5ee3bf06b6ee3eddd2d710107dfe",
     "https://aktools.graueneko.xyz/favicon.ico": "ca1864b98091318390dae46fbab1232aa2833e2e",
-    "https://aktools.graueneko.xyz/index.html": "4192997face0711fe2fcac9ce0d1fb7b8ea15031",
-    "https://aktools.graueneko.xyz/light.css": "b470d2dda743ebf439358662bb042d38139ad9a7",
-    "https://aktools.graueneko.xyz/main-es2015.767a5d407b3301c3e7aa.js": "04b60804b5fdc6cc530c89966d53b227489a6594",
-    "https://aktools.graueneko.xyz/main-es5.767a5d407b3301c3e7aa.js": "08ced69c0d6945453111144324ff28b168179d9f",
-    "https://aktools.graueneko.xyz/polyfills-es2015.b00a8ee45d22faafa706.js": "c37a8026023b3688ee0707b4afee9adfc3d4c95e",
-    "https://aktools.graueneko.xyz/polyfills-es5.8de5fca6e8c20518eff8.js": "150715c33b16144692d809e7843206541c89683d",
-    "https://aktools.graueneko.xyz/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "https://aktools.graueneko.xyz/runtime-es5.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "https://aktools.graueneko.xyz/styles.8967054a99a191ccb0dc.css": "a7064318f103698f0f92bb69716c6df3ac176de9"
+    "https://aktools.graueneko.xyz/index.html": "2be8d4a8f6e3d29567962c5985dbe484c7e94073",
+    "https://aktools.graueneko.xyz/light.css": "24c58cc0f8068777b913254a49dddea2b7238119",
+    "https://aktools.graueneko.xyz/main-es2015.89fc191e6b0bb5c67091.js": "097c03afe84803523196704565232325f062ac74",
+    "https://aktools.graueneko.xyz/main-es5.89fc191e6b0bb5c67091.js": "4db6adf0fc05926bb0b9dbded72756fd69194b61",
+    "https://aktools.graueneko.xyz/manifest.webmanifest": "34973e1bcc638ca0ca0129202c10fa144f06f908",
+    "https://aktools.graueneko.xyz/polyfills-es2015.254317a954cfa641d528.js": "1fef705783f83c60f192281108bde4988add1840",
+    "https://aktools.graueneko.xyz/polyfills-es5.c26a2fde5223ba618a95.js": "823e193782887652f5b58cfdba90241072e6ae8c",
+    "https://aktools.graueneko.xyz/runtime-es2015.44f7a62596b3847c435b.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "https://aktools.graueneko.xyz/runtime-es5.44f7a62596b3847c435b.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "https://aktools.graueneko.xyz/styles.e5bba7d6100189ce2924.css": "8c8042e46e2b714f1df522ec0bbe9ab190785024"
   },
   "navigationUrls": [
     {
