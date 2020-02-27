@@ -42,6 +42,7 @@ jobs:
           TOKEN: ${{ secrets.CODING_TOKEN }}
           REPO: e.coding.net/graueneko/aktools.git
       - name: Do push
+        if: env.UPDATE==1
         run: git push
     env:
       CI: true
