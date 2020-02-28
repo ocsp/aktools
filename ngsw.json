@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1582788537498,
+  "timestamp": 1582879638620,
   "index": "https://aktools.graueneko.xyz/index.html",
   "assetGroups": [
     {
@@ -430,7 +430,7 @@
     "https://aktools.graueneko.xyz/assets/img/material/sprite_exp_card_t4.png": "0ed2d6dad7658e24f2d333d7e10f1733b844183d",
     "https://aktools.graueneko.xyz/dark.css": "e41008036abd5ee3bf06b6ee3eddd2d710107dfe",
     "https://aktools.graueneko.xyz/favicon.ico": "ca1864b98091318390dae46fbab1232aa2833e2e",
-    "https://aktools.graueneko.xyz/index.html": "380ce234dec393b8926648234ed65b9e95592f92",
+    "https://aktools.graueneko.xyz/index.html": "57f6674583104fde9f487e140af1913752bf54e2",
     "https://aktools.graueneko.xyz/light.css": "24c58cc0f8068777b913254a49dddea2b7238119",
     "https://aktools.graueneko.xyz/main-es2015.50ed715db936a09274e4.js": "06856cf0d2651e69a80cb98490d39d8dd58dbdbf",
     "https://aktools.graueneko.xyz/main-es5.50ed715db936a09274e4.js": "abef0823c6106e5e1a58905c58694aa27f6d7f3b",
