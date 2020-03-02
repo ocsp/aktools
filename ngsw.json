@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1582880683517,
+  "timestamp": 1583140246840,
   "index": "https://aktools.graueneko.xyz/index.html",
   "assetGroups": [
     {
@@ -239,7 +239,7 @@
     "https://aktools.graueneko.xyz/assets/data/akhr.json": "efdce1b02dd9d8b40920e4a436edb2f41bf38faa",
     "https://aktools.graueneko.xyz/assets/data/aklevel.json": "1a2277806ee936551b7609386e69e48ffcf49c86",
     "https://aktools.graueneko.xyz/assets/data/akmaterial.json": "dd7347d78f93d708cd58a20a1fc06525fdccca08",
-    "https://aktools.graueneko.xyz/assets/data/charMaterials.json": "f62430383d7074ffcc88b2a867d473d0033c88a1",
+    "https://aktools.graueneko.xyz/assets/data/charMaterials.json": "ec38b963d2a581261d8402b9f0209bbb5828f02e",
     "https://aktools.graueneko.xyz/assets/data/detectdata.json": "7765926f001934633eaaf73a2a30a3d45814d898",
     "https://aktools.graueneko.xyz/assets/data/material.json": "b4570710edcbc9a7776f6bad907e408e72b4b02b",
     "https://aktools.graueneko.xyz/assets/icons/android-chrome-192x192.png": "7656a3b9681b37097efdb2093d25603fcad11441",
