@@ -26,8 +26,8 @@ jobs:
           pip install requests
           NEWCH=$(python ./tools/extractMaterials.py)
           NEWST=$(python ./tools/extractStages.py)
-          [ $NEWCH ] || [ $NEWST ] && COMB=$NEWCH$NEWST
-          [ $NEWCH ] && [ $NEWST ] && COMB=$NEWCH" & "$NEWST
+          [[ $NEWCH ]] || [[ $NEWST ]] && COMB=$NEWCH$NEWST
+          [[ $NEWCH ]] && [[ $NEWST ]] && COMB=$NEWCH" & "$NEWST
           echo "::set-env name=UPDATE::0"
           if [[ $COMB ]]; then
             echo "::set-env name=UPDATE::1"
