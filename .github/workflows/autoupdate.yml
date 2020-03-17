@@ -37,21 +37,14 @@ jobs:
             git checkout "${GITHUB_REF:11}"
             git commit -am "数据更新"
           fi
-      - name: Setup Github
+      - name: Push to Github
         if: env.UPDATE==1
-        run: git remote set-url origin https://x-access-token:$TOKEN@$REPO
+        run: |
+          git remote set-url origin https://x-access-token:$TOKEN@$REPO
+          git push
         env:
           TOKEN: ${{ secrets.GH_TOKEN }}
           REPO: github.com/graueneko/aktools.git
-      - name: Setup Coding
-        if: env.UPDATE==1
-        run: git remote set-url --add origin https://$TOKEN@$REPO
-        env:
-          TOKEN: ${{ secrets.CODING_TOKEN }}
-          REPO: e.coding.net/graueneko/aktools.git
-      - name: Do push
-        if: env.UPDATE==1
-        run: git push
     env:
       CI: true
       UPDATE: 0
