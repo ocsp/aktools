@@ -74,4 +74,4 @@ with open("./src/assets/data/charMaterials.json", "w", encoding="utf-8") as f:
     json.dump(result, f, ensure_ascii=False)
     # print("After update: {0} char-mats".format(len(result)))
     if len(newChars) > 0:
-        print("新干员 {0}".format(", ".join(newChars)), end="")
+        print("新干员：{0}".format("，".join(newChars)), end="")
